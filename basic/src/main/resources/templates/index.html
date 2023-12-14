@@ -9,16 +9,22 @@
 </head>
 
 <body>
-    <h1>사고 보드</h1>
+    <input type="button" value="로그인" onclick="location.href = '/loginPage'">
+    <a onclick="location.href='/loginPage'" style="color: #03e9f4;">로그인</a>
+    <h1 style="background-color: blueviolet;">사고 보드</h1>
 
-    <h2>결빙사고 집계</h2>
+    <h2 style="background-color: yellowgreen;">결빙사고 집계</h2>
     <div class="map-container">
-        <h2>결빙사고 지역별 차트</h2>
-        <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
-        <h2>결빙사고 지도</h2>
-        <iframe class="map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
+        <h2 style="background-color: skyblue">결빙사고 지역별 차트<br>
+            <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
+        </h2>
+        <h2 style="background-color: cadetblue;"">결빙사고 지도<br>
+            <iframe class=" map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
+        </h2>
     </div>
     <h2>결빙사고 지역별 뉴스</h2>
+
+
 </body>
 
 </html>
