@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.basic.model.dto.WebDto;
+import com.example.basic.database.entity.WebEntity;
 
 import lombok.AllArgsConstructor;
 
@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 public class PrincipalDetails implements UserDetails {
 
     @Autowired
-    private WebDto webDto;
+    private WebEntity WebEntity;
 
     // User의 권한
     @Override
@@ -30,7 +30,7 @@ public class PrincipalDetails implements UserDetails {
                     @Override
                     public String getAuthority() {
                         // userDto의 권한 추가
-                        return webDto.getRole();
+                        return WebEntity.getRole();
                     }
                 });
 
@@ -40,13 +40,13 @@ public class PrincipalDetails implements UserDetails {
     @Override
     public String getPassword() {
         // TODO Auto-generated method stub
-        return webDto.getPassword();
+        return WebEntity.getPassword();
     }
 
     @Override
     public String getUsername() {
         // TODO Auto-generated method stub
-        return webDto.getName();
+        return WebEntity.getId();
     }
 
     @Override
