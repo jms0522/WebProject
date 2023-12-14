@@ -1,5 +1,4 @@
 let loginEl = document.getElementById("login")
-let loginBtn = document.getElementById("loginBtn")
 
 function loginChk() {
 
@@ -14,5 +13,6 @@ function loginChk() {
         alert('비밀번호를 입력해주세요.');
         return;
     }
-    alert(`id : ${idEl}\npwd : ${pwdEl}`);
+    document.getElementById('login').submit();
+    // alert(`id : ${idEl}\npwd : ${pwdEl}`);
 }
