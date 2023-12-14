@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <form name="welcome" method="post" class="login">
+            <div>
+                <label for="userID">ID</label>
+                <input type="text" id="userID" onkeydown="if(event.keyCode == 13) loginChk()">
+            </div>
+            <div>
+                <label for="userPW">PW</label>
+                <input type="password" id="userPW" onkeydown="if(event.keyCode == 13) loginChk()">
+            </div>
+            <div class="btns">
+                <button type="button" class="btn" id="loginBtn" onclick="loginChk()">Login</button>
+                <button type="button" class="btn" id="joinBtn"><a href="join.html">Join</a></button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        var id = document.getElementById('userID');
+        var pw = document.getElementById('userPW');
+        var loginBtn = document.getElementById('loginBtn');
+        var joinBtn = document.getElementById('joinBtn');
+
+        // 로그인 유효성 체크 바리데이션
+        function loginChk() {
+            if (!id.value) {
+                alert('아이디를 입력해주세요.');
+                id.focus();
+                return;
+            }
+
+            if (!pw.value) {
+                alert('비밀번호를 입력해주세요.');
+                pw.focus();
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>
