@@ -8,7 +8,7 @@ import com.example.basic.service.WebService;
 
 @RestController
 @RequestMapping("/api")
-public class WebController {
+public class WebApiController {
     private WebService webService;
 
     @GetMapping("/hello")
