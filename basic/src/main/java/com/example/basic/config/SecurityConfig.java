@@ -53,7 +53,7 @@ public class SecurityConfig {
                         // Controller의 Method(/login)을 호출
                         .loginProcessingUrl("/login")
                         // 최종 로그인(인증)) 성공 시 접속할 URL Path
-                        .defaultSuccessUrl("/user")
+                        .defaultSuccessUrl("/index")
                         .permitAll()
 
                 );

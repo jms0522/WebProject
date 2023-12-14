@@ -67,4 +67,9 @@ public class WebController {
         log.info("[WebController][admin] Start");
         return "admin";
     }
+
+    @GetMapping("/home")
+    public String css() {
+        return "css";
+    }
 }
