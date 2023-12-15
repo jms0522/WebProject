@@ -10,5 +10,9 @@ function joinChk() {
     if (!joinPwdEl) {
         alert('비밀번호를 입력해주세요.');
     }
+    if (!joinPwdEl) {
+        alert("주소를 입력해주세요.");
+    }
+
     document.getElementById('join').submit();
 }

@@ -83,4 +83,23 @@ public class WebController {
         log.info("[WebController][loginPage] Start");
         return "test";
     }
+
+    @GetMapping("/mainPage")
+    public String mainPage() {
+        return "mainPage";
+    }
+
+    @GetMapping("/mainPageContent")
+    public String mainPageContent() {
+        return "mainPageContent";
+    }
+
+    @GetMapping("/testMain")
+    public String testMain() {
+        return "testMain";
+    }
+    @GetMapping("/page1")
+    public String page1() {
+        return "page1";
+    }
 }

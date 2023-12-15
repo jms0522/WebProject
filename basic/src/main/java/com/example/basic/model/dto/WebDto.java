@@ -18,4 +18,5 @@ public class WebDto {
     private String name;
     private int age;
     private String role;
+    private String addr;
 }

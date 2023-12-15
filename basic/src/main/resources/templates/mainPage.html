@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../static/css/main.css" />
+</head>
+<body>
+	<!-- Navigation -->
+<nav id="slide-menu">
+	<ul>
+		<li class="homepage">Homepage</li>
+		<li class="frost">Frost</li>
+		<li class="drunk">Drunk</li>
+		<li class="zone">Dangerous Zone</li>
+		<li class="logout">Logout</li>
+	</ul>
+</nav>
+<!-- Content panel -->
+<div id="content">
+	<div class="menu-trigger"></div>
+	<h1>도로 교통 사고 정보</h1>
+	<p>다양한 도로 사고 정보룰 볼 수 있는 페이지입니다.</p>
+	<h1 style="background-color: rgb(76, 43, 226)">결빙사고 보드</h1>
+
+        <h2 style="background-color: yellowgreen">결빙사고 집계</h2>
+
+		<div class="map-container">
+            <h2 style="background-color: skyblue">
+                결빙사고 지역별 차트<br />
+                <iframe
+                    class="chart"
+                    src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                ></iframe>
+            </h2>
+            <h2 style="background-color: cadetblue">
+                결빙사고 지도<br />
+                <iframe
+                    class="map"
+                    src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                ></iframe>
+            </h2>
+        </div>
+	
+</div>
+	
+</body>
+<script src="../static/js/main.js"></script>
+</html>
