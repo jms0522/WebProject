@@ -281,6 +281,199 @@ hr {
 	color: #068ccf;
 }
 
+/* total section */
+.tm-total {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-total-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-total-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-total-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-total-link.active {
+	color: #666666;
+}
+
+.tm-total-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-total figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-total figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: -2%;
+	margin-right: -2%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-total figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-total figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-total figure figcaption::before,
+.tm-total figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-total figure figcaption,
+.tm-total figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-total figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-total figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-total figure h2 span {
+	font-weight: 800;
+}
+
+.tm-total figure h2,
+.tm-total figure p {
+	margin: 0;
+}
+
+.tm-total figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
 /* Gallery section */
 .tm-gallery {
 	position: relative;
@@ -663,6 +856,778 @@ a.tm-paging-link:hover {
 }
 
 .tm-news figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* drunk section */
+.tm-drunk {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-drunk-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-drunk-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-drunk-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-drunk-link.active {
+	color: #666666;
+}
+
+.tm-drunk-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-drunk figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-drunk figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: -2%;
+	margin-right: -2%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-drunk figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-drunk figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-drunk figure figcaption::before,
+.tm-drunk figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-drunk figure figcaption,
+.tm-drunk figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-drunk figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-drunk figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-drunk figure h2 span {
+	font-weight: 800;
+}
+
+.tm-drunk figure h2,
+.tm-drunk figure p {
+	margin: 0;
+}
+
+.tm-drunk figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* news section */
+.tm-dnews {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-dnews-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-dnews-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-dnews-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-dnews-link.active {
+	color: #666666;
+}
+
+.tm-dnews-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-dnews figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-dnews figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: 10%;
+	margin-right: 10%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-dnews figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-dnews figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-dnews figure figcaption::before,
+.tm-dnews figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-dnews figure figcaption,
+.tm-dnews figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-dnews figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-dnews figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-dnews figure h2 span {
+	font-weight: 800;
+}
+
+.tm-dnews figure h2,
+.tm-dnews figure p {
+	margin: 0;
+}
+
+.tm-dnews figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* holiday section */
+.tm-holiday {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-holiday-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-holiday-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-holiday-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-holiday-link.active {
+	color: #666666;
+}
+
+.tm-holiday-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-holiday figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-holiday figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: -2%;
+	margin-right: -2%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-holiday figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-holiday figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-holiday figure figcaption::before,
+.tm-holiday figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-holiday figure figcaption,
+.tm-holiday figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-holiday figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-holiday figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-holiday figure h2 span {
+	font-weight: 800;
+}
+
+.tm-holiday figure h2,
+.tm-holiday figure p {
+	margin: 0;
+}
+
+.tm-holiday figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* news section */
+.tm-hnews {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-hnews-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-hnews-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-hnews-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-hnews-link.active {
+	color: #666666;
+}
+
+.tm-hnews-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-hnews figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-hnews figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: 10%;
+	margin-right: 10%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-hnews figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-hnews figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-hnews figure figcaption::before,
+.tm-hnews figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-hnews figure figcaption,
+.tm-hnews figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-hnews figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-hnews figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-hnews figure h2 span {
+	font-weight: 800;
+}
+
+.tm-hnews figure h2,
+.tm-hnews figure p {
+	margin: 0;
+}
+
+.tm-hnews figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }

@@ -45,6 +45,13 @@ https://templatemo.com/tm-555-upright
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="#total" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    종 합
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#gallery" class="nav-link">
                                     <div class="triangle-right"></div>
                                     <i class="fas fa-images nav-icon"></i>
@@ -59,10 +66,31 @@ https://templatemo.com/tm-555-upright
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#about" class="nav-link">
+                                <a href="#drunk" class="nav-link">
                                     <div class="triangle-right"></div>
                                     <i class="fas fa-user-friends nav-icon"></i>
                                     음주 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#dnews" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    음주 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#holiday" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    연휴 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#hnews" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    연휴 사고 기사
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -176,6 +204,46 @@ https://templatemo.com/tm-555-upright
                     </div>
                 </section>
             </div>
+
+            <!-- total section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-01.jpg"></div>
+                <section id="total" class="tm-section">
+                    <h2 class="tm-text-primary">Total</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-total-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-total-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-total-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-total-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-total-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-total-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-total-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-total">
+                        <figure class="effect-honey tm-total-item portrait">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                                allowTransparency="true"></iframe>
+                        </figure>
+                        <figure class="effect-honey tm-total-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                                allowTransparency="true"></iframe>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+
             <!-- Gallery section -->
             <div class="tm-section-wrap">
                 <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
@@ -281,258 +349,212 @@ https://templatemo.com/tm-555-upright
                 </section>
             </div>
 
-
-            <!-- About section -->
+            <!-- drunk section -->
             <div class="tm-section-wrap">
-                <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-03.jpg"></div>
-                <section id="about" class="tm-section">
-                    <h2 class="tm-text-primary">About Upright CSS Template</h2>
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="drunk" class="tm-section">
+                    <h2 class="tm-text-primary">Upright drunk</h2>
                     <hr class="mb-5">
+                    <ul class="tm-drunk-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-drunk-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-drunk-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-drunk-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-drunk-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="animal">
+                                <i class="fas fa-paw tm-drunk-link-icon"></i>
+                                예방법
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-drunk">
+                        <figure class="effect-honey tm-drunk-item portrait">
 
-                    <div class="row tm-row-about">
-                        <div class="tm-col-about tm-col-about-l">
-                            <p class="mb-4">
-                                If you want to support TemplateMo, you can contribute <a rel="sponsored"
-                                    href="https://paypal.me/templatemo" target="_parent">a small donation via
-                                    <strong>PayPal</strong></a>. This will be very helpful. Thank you. </p>
-                            <p class="mb-4">
-                                Aliquam ornare varius erat vel aliquet. Proin ac neque a tortor tristique semper
-                                eget eget sapien. Morbi vitae diam a odio lobortis mattis sed nec justo.
-                            </p>
-                            <p class="mb-4">
-                                Suspendisse sagittis tortor vel turpis aliquet, vitae molestie erat luctus.
-                            </p>
-                        </div>
-                        <div class="tm-col-about tm-col-about-r">
-                            <img src="img/img-about-01.jpg" alt="Image" class="img-fluid mb-5 tm-img-about">
-                            <p>
-                                Duis fringilla eget purus luctus sodales. Sed auctor odio quis ligula dignissim
-                                efficitur vitae vitae quam.
-                            </p>
-                        </div>
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-drunk-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-drunk-item animal">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
                     </div>
-                    <div class="mt-5">
-                        <div class="tm-carousel">
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-01.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Walk</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Founder and CEO</h4>
-                                </div>
-                            </div>
+                </section>
+            </div>
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-02.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Soft</h3>
-                                    <p>This is a carousel for a list of 10 team members. Each member image hover has
-                                        3 social icons.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Managing Director</h4>
-                                </div>
-                            </div>
+            <!-- dnews section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="dnews" class="tm-section">
+                    <h2 class="tm-text-primary">dnews</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-dnews-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-dnews-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="seoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="gyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="inchon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-dnews">
+                        <figure class="effect-honey tm-dnews-item seoul">
+                            <li>seoul</li>
+                        </figure>
+                        <figure class="effect-honey tm-dnews-item gyeonggi">
+                            <input type="button" value="hello">
+                        </figure>
+                        <figure class="effect-honey tm-dnews-item inchon">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-03.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">David Rock</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Financial Officer</h4>
-                                </div>
-                            </div>
+            <!-- holiday section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="holiday" class="tm-section">
+                    <h2 class="tm-text-primary">Upright holiday</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-holiday-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-holiday-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-holiday-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-holiday-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-holiday-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="animal">
+                                <i class="fas fa-paw tm-holiday-link-icon"></i>
+                                예방법
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-holiday">
+                        <figure class="effect-honey tm-holiday-item portrait">
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-01.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Second</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Senior Director</h4>
-                                </div>
-                            </div>
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                                allowTransparency="true"></iframe>
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-02.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Second</h3>
-                                    <p>This is a carousel for a list of 10 team members. Each member image hover has
-                                        3 social icons.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Accounting Officer</h4>
-                                </div>
-                            </div>
+                        </figure>
+                        <figure class="effect-honey tm-holiday-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                                allowTransparency="true"></iframe>
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-03.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">David Second</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Financial Assistant</h4>
-                                </div>
-                            </div>
+                        </figure>
+                        <figure class="effect-honey tm-holiday-item animal">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
 
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-01.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Third</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Designer</h4>
-                                </div>
-                            </div>
-
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-02.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Third</h3>
-                                    <p>This is a carousel for a list of 10 team members. Each member image hover has
-                                        3 social icons.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Program Director</h4>
-                                </div>
-                            </div>
-
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-03.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">David Three</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Financial Assistant</h4>
-                                </div>
-                            </div>
-
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="img/about-01.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://facebook.com" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Four</h3>
-                                    <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque,
-                                        quis hendrerit.</p>
-                                    <h4 class="tm-text-secondary tm-about-subtitle">Media Partner</h4>
-                                </div>
-                            </div>
-                        </div>
+            <!-- hnews section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="hnews" class="tm-section">
+                    <h2 class="tm-text-primary">hnews</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-hnews-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-hnews-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="seoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="gyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="inchon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-hnews">
+                        <figure class="effect-honey tm-hnews-item seoul">
+                            <li>seoul</li>
+                        </figure>
+                        <figure class="effect-honey tm-hnews-item gyeonggi">
+                            <input type="button" value="hello">
+                        </figure>
+                        <figure class="effect-honey tm-hnews-item inchon">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
                     </div>
                 </section>
             </div>
