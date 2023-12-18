@@ -231,7 +231,7 @@ hr {
 
 /* Home section */
 #home {
-	min-height: 100vh;
+	min-height: 300px;
 }
 
 .tm-col-home-l {
