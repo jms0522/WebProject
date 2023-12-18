@@ -28,7 +28,8 @@ public class WebEntity {
     private String id;
     private String password;
     private String name;
-    private int age;
+    // private String apiKey;
+    private int city;
     private String role;
 
 }

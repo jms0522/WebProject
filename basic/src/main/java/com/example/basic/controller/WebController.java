@@ -5,10 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
 import com.example.basic.database.entity.WebEntity;
 import com.example.basic.service.WebService;
 
@@ -75,35 +71,22 @@ public class WebController {
     public String css() {
         return "css";
     }
-<<<<<<< HEAD
 
     @GetMapping("/loginfail")
     public String loginFail() {
         return "loginfail";
     }
 
-    @GetMapping("/test")
-    public String test() {
+    @GetMapping("/kakaomap")
+    public String kakaomap() {
         log.info("[WebController][loginPage] Start");
-        return "test";
+        return "kakaomap";
     }
 
-    @GetMapping("/frozen")
-    public String frozen() {
-        return "frozen";
+    @GetMapping("/mainpage")
+    public String mainpage() {
+        log.info("[WebController][mainpage]");
+        return "mainpage";
     }
-
-    @GetMapping("/drunk")
-    public String drunk(){
-        return "drunk";
-    }
-
-    @GetMapping("total")
-    public String total() {
-        return "total";
-    }
-
-=======
->>>>>>> origin/krkim
 }
 
