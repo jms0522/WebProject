@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.basic.database.entity.WebEntity;
 import com.example.basic.service.WebService;
@@ -83,4 +86,21 @@ public class WebController {
         log.info("[WebController][loginPage] Start");
         return "test";
     }
+
+    @GetMapping("/frozen")
+    public String frozen() {
+        return "frozen";
+    }
+
+    @GetMapping("/drunk")
+    public String drunk(){
+        return "drunk";
+    }
+
+    @GetMapping("total")
+    public String total() {
+        return "total";
+    }
+
 }
+

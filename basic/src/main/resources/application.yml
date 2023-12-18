@@ -35,3 +35,7 @@ spring:
 
     mvc:
         static-path-pattern: /static/**
+
+    openweathermap:
+        api:
+        key: 2f40a6b63771f57f788b6387e107c062
