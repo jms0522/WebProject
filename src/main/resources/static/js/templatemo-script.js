@@ -110,7 +110,7 @@ $(document).ready(function () {
                         classes = classes.join(' ');
                         $(this).addClass(classes);
                     } else {
-                       $(this).addClass(wordPage); 
+                    $(this).addClass(wordPage); 
                     }
                     item++;
                 });
@@ -175,7 +175,7 @@ $(document).ready(function () {
         gallery: {
             enabled: true
         }
-      });
+    });
 
     /****************** Smooth Scrolling *****************/
 
