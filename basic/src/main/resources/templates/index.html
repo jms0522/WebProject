@@ -5,22 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freezing accident map</title>
-    <link rel="stylesheet" href="../static/index.css"> <!-- 외부 CSS 파일 링크 -->
+    <link rel="stylesheet" href="../static/css/index.css"> <!-- 외부 CSS 파일 링크 -->
 </head>
 
 <body>
-    <input type="button" value="로그인" onclick="location.href = '/loginPage'">
-    <a onclick="location.href='/loginPage'" style="color: #03e9f4;">로그인</a>
-    <h1 style="background-color: blueviolet;">사고 보드</h1>
-
-    <h2 style="background-color: yellowgreen;">결빙사고 집계</h2>
+    
+    <a href="./loginPage" class="login-btn">로그인</a>
+    <a href="./join" class="join-btn">회원가입</a>
+    <div id="navbar">
+        <a href="#top">통계</a>
+        <a href="#top1">차트</a>
+        <a href="#top2">지도</a>
+        <a href="#top3">뉴스</a>
+    </div>
+    <h1 id="top">사고 보드</h1>
+    <div class="stats-box">
+        <div class="title">빙결 사고 통계</div>
+        <div class="content">
+        <div class="section">사고건수 <br>50</div>
+        <div class="section">사망자 수 <br> 5</div>
+        <div class="section">부상자 수 <br> 20</div>
+        <div class="section">관련 기사 <br> 10</div>
+        </div>
+    </div>
     <div class="map-container">
-        <h2 style="background-color: skyblue">결빙사고 지역별 차트<br>
-            <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
-        </h2>
-        <h2 style="background-color: cadetblue;"">결빙사고 지도<br>
-            <iframe class=" map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
-        </h2>
+        <br><div id="top1" class="title">결빙사고 지역별 차트 </div>
+        <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
+        <h2 id="top2">결빙사고 지도</h2>
+        <iframe class="map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
     </div>
     <h2>결빙사고 지역별 뉴스</h2>
 </body>
