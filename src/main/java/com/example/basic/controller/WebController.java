@@ -23,7 +23,7 @@ public class WebController {
     @GetMapping("/index")
     public String index() {
         log.info("[WebController][index] Start");
-        return "index";
+        return "mainpage";
     }
 
     @GetMapping("/logout")
@@ -74,13 +74,7 @@ public class WebController {
     }
 
     @GetMapping("/loginfail")
-    public String loginFail() {
+    public String loginfail(){
         return "loginfail";
-    }
-
-    @GetMapping("/test")
-    public String test() {
-        log.info("[WebController][loginPage] Start");
-        return "test";
     }
 }
