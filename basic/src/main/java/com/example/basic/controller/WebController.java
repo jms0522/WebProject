@@ -75,6 +75,7 @@ public class WebController {
     public String css() {
         return "css";
     }
+<<<<<<< HEAD
 
     @GetMapping("/loginfail")
     public String loginFail() {
@@ -102,5 +103,7 @@ public class WebController {
         return "total";
     }
 
+=======
+>>>>>>> origin/krkim
 }
 
