@@ -72,4 +72,9 @@ public class WebController {
     public String css() {
         return "css";
     }
+
+    @GetMapping("/loginfail")
+    public String loginfail(){
+        return "loginfail";
+    }
 }

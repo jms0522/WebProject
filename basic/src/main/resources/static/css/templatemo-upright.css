@@ -474,6 +474,199 @@ a.tm-paging-link:hover {
 	font-size: 68.5%;
 }
 
+/* news section */
+.tm-news {
+	position: relative;
+	margin: 0 -10px;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tm-news-links {
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-bottom: 0;
+}
+
+.tm-news-links li {
+	list-style: none;
+	margin-bottom: 30px;
+	margin-right: 55px;
+}
+
+.tm-news-link {
+	padding: 15px;
+	color: #006699;
+}
+
+.tm-news-link.active {
+	color: #666666;
+}
+
+.tm-news-link-icon {
+	width: 25px;
+}
+
+.tm-paging {
+	margin-top: 35px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tm-paging-link {
+	display: flex;
+	float: left;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	color: #999;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+a.tm-paging-link.active,
+a.tm-paging-link:hover {
+	background: #006699;
+	color: white;
+}
+
+@media (max-width: 1972px) {
+	.tm-paging {
+		max-width: 870px;
+	}
+}
+
+@media (max-width: 1660px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 1258px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 898px) {
+	.tm-paging {
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 700px) {
+	.tm-paging {
+		max-width: 580px;
+	}
+}
+
+@media (max-width: 618px) {
+	.tm-paging {
+		max-width: 290px;
+		flex-wrap: wrap;
+	}
+
+	.tm-paging-link {
+		margin-right: 5px;
+	}
+}
+
+.tm-news figure.effect-honey iframe {
+	width: 500px;
+	/* 원하는 너비로 조정 */
+	height: 400px;
+	/* 원하는 높이로 조정 */
+	margin-right: -2%;
+	/* 다른 스타일 속성들... */
+	margin-left: 0%;
+}
+
+.tm-news figure {
+	position: relative;
+	z-index: 50;
+	float: left;
+	overflow: hidden;
+	margin: 10%;
+	margin-right: 10%;
+	height: 500px;
+	width: 500px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tm-news figure img {
+	position: relative;
+	display: block;
+	min-height: 200%;
+	max-width: 200%;
+	opacity: 0.8;
+}
+
+.tm-news figure figcaption {
+	padding: 1em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tm-news figure figcaption::before,
+.tm-news figure figcaption::after {
+	pointer-events: none;
+}
+
+.tm-news figure figcaption,
+.tm-news figure figcaption>a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.tm-news figure figcaption>a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.tm-news figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.tm-news figure h2 span {
+	font-weight: 800;
+}
+
+.tm-news figure h2,
+.tm-news figure p {
+	margin: 0;
+}
+
+.tm-news figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
 /*---------------*/
 /***** Honey *****/
 /*---------------*/
