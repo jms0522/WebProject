@@ -303,10 +303,12 @@ a.tm-paging-link:hover {
 }
 
 .tm-gallery figure.effect-honey iframe {
-    width: 500px; /* 원하는 너비로 조정 */
-    height: 400px; /* 원하는 높이로 조정 */
+    width: 510px; /* 원하는 너비로 조정 */
+    height: 428px; /* 원하는 높이로 조정 */
     margin-right: -2%;/* 다른 스타일 속성들... */
 	margin-left: 0%;
+	border: none; /* 테두리 제거 */
+    background-color: transparent;
 }
 
 .tm-gallery figure {
@@ -316,8 +318,8 @@ a.tm-paging-link:hover {
 	overflow: hidden;
 	margin: -2%;
 	margin-right: -2%;
-	height: 500px;
-	width: 500px;
+	height: 430px;
+	width: 505px;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -329,29 +331,6 @@ a.tm-paging-link:hover {
 	min-height: 200%;
 	max-width: 200%;
 	opacity: 0.8;
-}
-
-.tm-gallery figure figcaption {
-	padding: 1em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.tm-gallery figure figcaption::before,
-.tm-gallery figure figcaption::after {
-	pointer-events: none;
-}
-
-.tm-gallery figure figcaption,
-.tm-gallery figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }
 
 /* Anchor will cover the whole item by default */
