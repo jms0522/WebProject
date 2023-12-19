@@ -32,6 +32,8 @@ spring:
         check-template-location: true
         suffix: .html
         cache: false
+        expose-session-attributes: true
+        # spring.mustache.expose-session-attributes=true
 
     mvc:
         static-path-pattern: /static/**

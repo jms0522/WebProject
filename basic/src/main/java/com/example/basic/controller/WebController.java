@@ -1,6 +1,9 @@
 package com.example.basic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,10 +23,18 @@ public class WebController {
     @Autowired
     private WebService webService;
 
+    private boolean isAuthenticated() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return false;
+        }
+        return authentication.isAuthenticated();
+    }
+
     @GetMapping("/index")
     public String index() {
         log.info("[WebController][index] Start");
-        return "mainpage";
+        return "index";
     }
 
     @GetMapping("/logout")
@@ -40,6 +51,9 @@ public class WebController {
     @GetMapping("/loginPage")
     public String loginPage() {
         log.info("[WebController][loginPage] Start");
+        if (isAuthenticated())
+            return "index";
+
         return "login";
     }
 
@@ -74,7 +88,7 @@ public class WebController {
     }
 
     @GetMapping("/loginfail")
-    public String loginfail(){
+    public String loginfail() {
         return "loginfail";
     }
 }

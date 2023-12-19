@@ -4,37 +4,733 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freezing accident map</title>
-    <link rel="stylesheet" href="../static/css/index.css"> <!-- 외부 CSS 파일 링크 -->
+    <title>Upright</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
+    <link rel="stylesheet" href="../static/css/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/-->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css"> <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="../static/css/slick/slick.min.css"> <!-- https://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" href="../static/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="../static/css/templatemo-upright.css">
+    <!--
+    
+TemplateMo 555 Upright
+
+https://templatemo.com/tm-555-upright
+
+-->
 </head>
 
-<body>
-    
-    <a href="./loginPage" class="login-btn">로그인</a>
-    <a href="./join" class="join-btn">회원가입</a>
-    <div id="navbar">
-        <a href="#top">통계</a>
-        <a href="#top1">차트</a>
-        <a href="#top2">지도</a>
-        <a href="#top3">뉴스</a>
-    </div>
-    <h1 id="top">사고 보드</h1>
-    <div class="stats-box">
-        <div class="title">빙결 사고 통계</div>
-        <div class="content">
-        <div class="section">사고건수 <br>50</div>
-        <div class="section">사망자 수 <br> 5</div>
-        <div class="section">부상자 수 <br> 20</div>
-        <div class="section">관련 기사 <br> 10</div>
-        </div>
-    </div>
-    <div class="map-container">
-        <br><div id="top1" class="title">결빙사고 지역별 차트 </div>
-        <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
-        <h2 id="top2">결빙사고 지도</h2>
-        <iframe class="map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
-    </div>
-    <h2>결빙사고 지역별 뉴스</h2>
+<body style="background-color: transparent;">
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Leftside bar -->
+            <div id="tm-sidebar" class="tm-sidebar">
+                <nav class="tm-nav">
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <div class="tm-brand-box">
+                            <h1 class="tm-brand">Upright</h1>
+                        </div>
+                        <ul id="tm-main-nav">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link current">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-home nav-icon"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#total" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    종 합
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#gallery" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    결빙 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#frozen_news" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images-news nav-icon"></i>
+                                    결빙 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#drunk" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    음주 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#dnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images-news nav-icon"></i>
+                                    음주 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#holiday" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    연휴 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#hnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images-news nav-icon"></i>
+                                    연휴 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-envelope nav-icon"></i>
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link external" target="_parent" rel="sponsored" href="./loginPage">
+                                    <div class=" triangle-right">
+                                    </div>
+                                    <i class="fas fa-external-link-alt nav-icon"></i>
+                                    로그인
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link external" target="_parent" rel="sponsored" class="nav-link"
+                                    id="islogout" type="button" onclick="islogout()">로그아웃</a>
+                                <div class=" triangle-right">
+                                </div>
+                                <i class="fas fa-external-link-alt nav-icon"></i>
+                                <!-- 로그아웃 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="mb-3 tm-mt-100">
+                        Design: <a href="https://templatemo.com" target="_parent" rel="sponsored">TemplateMo</a>
+                    </footer>
+                </nav>
+            </div>
+
+            <div class="tm-main">
+                <!-- Home section -->
+                <div class="tm-section-wrap">
+                    <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-01.jpg"></div>
+                    <section id="home" class="tm-section">
+                        <h2 class="tm-text-primary">실시간 날씨 기온</h2>
+                        <hr class="mb-5">
+                        <div class="row">
+                            <div class="col-lg-6 tm-col-home mb-4">
+                                <button onclick="getWeather('Seoul')">서울</button>
+                                <button onclick="getWeather('Busan')">부산</button>
+                                <button onclick="getWeather('Daegu')">대구</button>
+                                <button onclick="getWeather('Gyeonggi-do')">경기</button>
+                                <button onclick="getWeather('Incheon')">인천</button>
+                                <button onclick="getWeather('Daejeon')">대전</button>
+                                <button onclick="getWeather('Gwangju')">광주</button>
+                                <button onclick="getWeather('Gangneung', 'Sokcho')">강원</button>
+                                <button onclick="getWeather('Ulsan')">울산</button>
+                                <button onclick="getWeather('Sejong')">충청</button>
+                                <button onclick="getWeather('Mokpo')">전라</button>
+                                <button onclick="getWeather('Changwon')">경상</button>
+                                <button onclick="getWeather('Jeju')">제주</button>
+                                <!-- 원하는 지역 버튼을 추가할 수 있습니다. -->
+                                <div id="weather-container">
+                                    <!-- 날씨 정보가 표시될 곳 -->
+                                    <script>
+                                        // OpenWeatherMap API 키
+                                        const apiKey = '2f40a6b63771f57f788b6387e107c062';
+                                        // API 호출 함수
+                                        async function getWeather(city) {
+                                            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+                                            const data = await response.json();
+                                            // 날씨 정보를 표시하는 함수 호출
+                                            displayWeather(data);
+                                        }
+                                        // 날씨 정보를 표시하는 함수
+                                        function displayWeather(data) {
+                                            const weatherContainer = document.getElementById('weather-container');
+                                            weatherContainer.innerHTML = '';
+                                            const cityName = document.createElement('h2');
+                                            cityName.textContent = data.name;
+                                            weatherContainer.appendChild(cityName);
+                                            const temperature = document.createElement('p');
+                                            temperature.textContent = `온도: ${data.main.temp}°C`;
+                                            weatherContainer.appendChild(temperature);
+                                            const description = document.createElement('p');
+                                            description.textContent = `날씨: ${data.weather[0].description}`;
+                                            weatherContainer.appendChild(description);
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row tm-row-home">
+                            <div class="tm-col-home tm-col-home-l">
+                                <div class="media mb-4">
+                                    <i class="fas fa-scroll fa-4x tm-post-icon tm-text-primary"></i>
+                                    <div class="media-body"></div>
+                                </div>
+                            </div>
+                            <div class="media mb-4">
+                                <i class="fas fa-cloud-sun fa-4x tm-post-icon tm-text-primary"></i>
+                                <div class="media-body">
+                                    <a href="#" class="d-block mb-2 tm-text-primary tm-post-link"></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </ul>
+                </div>
+                <div class="tm-col-home mr-0 ml-auto"></div>
+                </section>
+            </div>
+
+            <!-- total section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-01.jpg"></div>
+                <section id="total" class="tm-section">
+                    <h2 class="tm-text-primary">Total</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-total-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-total-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-total-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-total-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-total-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-total-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-total-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-total">
+                        <figure class="effect-honey tm-total-item portrait">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                                allowTransparency="true"></iframe>
+                        </figure>
+                        <figure class="effect-honey tm-total-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                                allowTransparency="true"></iframe>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Gallery section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="gallery" class="tm-section">
+                    <h2 class="tm-text-primary">Upright Gallery</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-gallery-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-gallery-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-gallery-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-gallery-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-gallery-link" data-filter="animal">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                예방법
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-gallery">
+                        <figure class="effect-honey tm-gallery-item portrait">
+
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-gallery-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-gallery-item animal">
+                            <a href="http://www.newspeople.co.kr/m/view.jsp?ncd=4546" target="_blank">
+                                <img src="../static/img/gallery/animal-01.jpg" alt="" />
+                            </a>
+                        </figure>
+
+                    </div>
+                    <!-- <div class="tm-gallery">
+                    <figure class="effect-honey tm-gallery-item portrait">
+
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-gallery-item nature">
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-gallery-item animal">
+                        <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                        <figcaption>
+                            <h2><i>Dreamy Honey</i></h2>
+                            <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                        </figcaption>
+                    </figure>
+                </div> -->
+                </section>
+            </div>
+
+            <!-- news section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="frozen_news" class="tm-section">
+                    <h2 class="tm-text-primary">news</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-news-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-news-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-news-link" data-filter="seoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-news-link" data-filter="gyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-news-link" data-filter="inchon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-news">
+                        <figure class="effect-honey tm-news-item seoul">
+                            <li>seoul</li>
+                        </figure>
+                        <figure class="effect-honey tm-news-item gyeonggi">
+                            <input type="button" value="hello">
+                        </figure>
+                        <figure class="effect-honey tm-news-item inchon">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+
+            <!-- drunk section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="drunk" class="tm-section">
+                    <h2 class="tm-text-primary">Upright drunk</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-drunk-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-drunk-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="d_seoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="d_gyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-drunk-link" data-filter="d_incheon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-drunk">
+                        <figure class="effect-honey tm-drunk-item portrait">
+
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/drunk_chart.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-drunk-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/drunk_map.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-drunk-item animal">
+                            <a href="https://blog.naver.com/loveacrc/222143004381">
+                                <figure class="effect-honey tm-drunk-item animal">
+                                    <img src="../static/img/drunk1.jpg" alt="Image" />
+                                </figure>
+                            </a>
+                        </figure>
+                    </div>
+
+                    <!-- <div class="tm-drunk">
+                    <figure class="effect-honey tm-drunk-item d_seoul">
+
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-drunk-item d_gyeonggi">
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-drunk-item d_inchon">
+                        <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                        <figcaption>
+                            <h2><i>Dreamy Honey</i></h2>
+                            <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                        </figcaption>
+                    </figure>
+                </div> -->
+                </section>
+            </div>
+
+            <!-- dnews section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="dnews" class="tm-section">
+                    <h2 class="tm-text-primary">dnews</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-dnews-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-dnews-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="dseoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="dgyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="dinchon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="aaaa">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                ㅁㅁㅁ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-dnews-link" data-filter="bbb">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                ㅠㅠㅠ
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-dnews">
+                        <figure class="effect-honey tm-dnews-item dseoul">
+                            <li>seoul</li>
+                        </figure>
+                        <figure class="effect-honey tm-dnews-item dgyeonggi">
+                            <input type="button" value="hello">
+                        </figure>
+                        <figure class="effect-honey tm-dnews-item dinchon">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+
+            <!-- holiday section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="holiday" class="tm-section">
+                    <h2 class="tm-text-primary">Upright holiday</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-holiday-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-holiday-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-holiday-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="portrait">
+                                <i class="fas fa-portrait tm-holiday-link-icon"></i>
+                                차트
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="nature">
+                                <i class="fas fa-leaf tm-holiday-link-icon"></i>
+                                지도
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-holiday-link" data-filter="animal">
+                                <i class="fas fa-paw tm-holiday-link-icon"></i>
+                                예방법
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-holiday">
+                        <figure class="effect-honey tm-holiday-item portrait">
+
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/tmzone_chart.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-holiday-item nature">
+                            <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/tmzone_map.html"
+                                allowTransparency="true"></iframe>
+
+                        </figure>
+                        <figure class="effect-honey tm-holiday-item animal">
+                            <a href="https://m.blog.naver.com/ksea1004/222862212171">
+                                <figure class="effect-honey tm-gallery-item animal">
+                                    <img src="../static/img/timezone1.png" alt="Image" />
+
+                                </figure>
+                    </div>
+                    <!-- <div class="tm-holiday">
+                    <figure class="effect-honey tm-holiday-item portrait">
+
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/chart.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-holiday-item nature">
+                        <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                            allowTransparency="true"></iframe>
+
+                    </figure>
+                    <figure class="effect-honey tm-holiday-item animal">
+                        <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                        <figcaption>
+                            <h2><i>Dreamy Honey</i></h2>
+                            <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                        </figcaption>
+                    </figure>
+                </div> -->
+                </section>
+            </div>
+
+            <!-- hnews section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+                <section id="hnews" class="tm-section">
+                    <h2 class="tm-text-primary">hnews</h2>
+                    <hr class="mb-5">
+                    <ul class="tm-hnews-links">
+                        <li>
+                            <a href="javascript:void(0);" class="active tm-hnews-link" data-filter="*">
+                                <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                                All
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="seoul">
+                                <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                                서울
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="gyeonggi">
+                                <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                                경기
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="tm-hnews-link" data-filter="inchon">
+                                <i class="fas fa-paw tm-gallery-link-icon"></i>
+                                인천
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tm-hnews">
+                        <figure class="effect-honey tm-hnews-item seoul">
+                            <li>seoul</li>
+                        </figure>
+                        <figure class="effect-honey tm-hnews-item gyeonggi">
+                            <input type="button" value="hello">
+                        </figure>
+                        <figure class="effect-honey tm-hnews-item inchon">
+                            <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                            <figcaption>
+                                <h2><i>Dreamy Honey</i></h2>
+                                <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Contact section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-04.jpg"></div>
+                <div id="contact" class="tm-section">
+                    <h2 class="tm-text-primary">Contact Upright</h2>
+                    <hr class="mb-5">
+                    <div class="row">
+                        <div class="col-xl-6 tm-contact-col-l mb-4">
+                            <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control rounded-0" placeholder="Name"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control rounded-0" placeholder="Email"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="contact-select" name="inquiry">
+                                        <option value="-">Subject</option>
+                                        <option value="sales">Sales &amp; Marketing</option>
+                                        <option value="creative">Creative Design</option>
+                                        <option value="uiux">UI / UX</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="8" name="message" class="form-control rounded-0"
+                                        placeholder="Message" required=></textarea>
+                                </div>
+
+                                <div class="form-group tm-text-right">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xl-6 tm-contact-col-r">
+                            <!-- Map -->
+                            <div class="mapouter mb-4">
+                                <div class="gmap_canvas">
+                                    <iframe width="100%" height="520" id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <address class="mb-4">
+                                120-240 eget purus luctus sodales. Sed<br>
+                                auctor odio quis ligula dignissim efficitur<br>
+                                vitae vitae quam 16502
+                            </address>
+
+                            <!-- Links -->
+                            <ul class="tm-contact-links mb-4">
+                                <li class="mb-2">
+                                    <a href="tel:0100200340">
+                                        <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
+                                        Tel: 010-020-0340
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@company.com">
+                                        <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
+                                        Email: info@company.com
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="tm-contact-social">
+                                <li><a href="https://fb.com/templatemo" class="tm-social-link"><i
+                                            class="fab fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com" class="tm-social-link"><i
+                                            class="fab fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://instagram.com" class="tm-social-link"><i
+                                            class="fab fa-instagram"></i></a>
+                                </li>
+                                <li><a href="https://youtube.com" class="tm-social-link"><i
+                                            class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="tm-section-wrap tm-copyright row">
+                <div class="col-12">
+                    <div class="text-right">
+                        Copyright 2020 Upright Company
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .tm-main -->
+    </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <script src="../static/js/jquery-3.4.1.min.js"></script> <!-- https://jquery.com/ -->
+    <script src="../static/js/jquery.singlePageNav.min.js"></script>
+    <!-- https://github.com/ChrisWojcik/single-page-nav -->
+    <script src="../static/js/parallax/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
+    <script src="../static/js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
+    <script src="../static/js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <script src="../static/slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
+    <script src="../static/js/templatemo-script.js"></script>
 </body>
 
 </html>
