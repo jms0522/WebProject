@@ -994,7 +994,7 @@ $(document).ready(function () {
 
     $('.tm-holiday').magnificPopup({
         delegate: 'a',
-        type: 'image',
+        type: 'text',
         holiday: {
             enabled: true
         }

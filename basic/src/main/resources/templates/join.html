@@ -20,7 +20,17 @@
                 <input type="password" name="password" placeholder="비밀번호를 입력해주세요." />
                 <label>비밀번호</label>
             </div>
-
+            <div class="user-box">
+                <!-- <input type="addr" name="addr" placeholder="Test" /> -->
+                <label>거주지역</label>
+                <select name="addr" id="addr">
+                    <option value="" disabled selected>--선택해주세요--</option>
+                    <option value="seoul">서울</option>
+                    <option value="gyeonggi">경기</option>
+                    <option value="inchon">인천</option>
+                    <option value="busan">부산</option>
+                </select>
+            </div>
             <a href="#" onclick="return joinChk()">
                 <span></span>
                 <span></span>
