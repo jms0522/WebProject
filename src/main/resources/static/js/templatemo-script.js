@@ -27,6 +27,161 @@ $(document).ready(function () {
     $("#tm-sidebar .nav-link").click(function (e) {
         $(".tm-sidebar").removeClass("show");
     });
+// total
+
+var itemSelector_total = ".tm-total-item";
+var responsiveIsotope_total = [[480, 4], [720, 6], [1920, 9]];
+var itemsPerPageDefault_total = 12;
+var itemsPerPage_total = defineItemsPerPage_total();
+var currentNumberPages_total = 1;
+var currentPage_total = 1;
+var currentFilter_total = '*';
+var filterValue_total = "";
+var pageAttribute_total = 'data-page';
+var pagerClass_total = 'tm-paging';
+var $container_total = $('.tm-total').isotope({
+    itemSelector_total: itemSelector_total
+});
+
+$container_total.imagesLoaded().progress(function () {
+    $container_total.isotope('layout');
+});
+
+function changeFilter_total(selector) { $container_total.isotope({ filter: selector }); }
+
+function goToPage_total(n) {
+    currentPage_total = n;
+    var selector_total = itemSelector_total;
+    var exclusives_total = [];
+
+    if (currentFilter_total != '*') {
+        exclusives_total.push(selector_total + '.' + currentFilter_total);
+    }
+
+    filterValue_total = exclusives_total.length ? exclusives_total.join('') : '*';
+
+    var wordPage_total = currentPage_total.toString();
+    filterValue_total += ('.' + wordPage_total);
+    changeFilter_total(filterValue_total);
+}
+
+function defineItemsPerPage_total() {
+    var pages_total = itemsPerPageDefault_total;
+
+    for (var i = 0; i < responsiveIsotope_total.length; i++) {
+        if ($(window).width() <= responsiveIsotope_total[i][0]) {
+            pages_total = responsiveIsotope_total[i][1];
+            break;
+        }
+    }
+    return pages_total;
+}
+
+function setPagination_total() {
+    var SettingsPagesOnItems_total = function () {
+        var itemsLength_total = $container_total.children(itemSelector_total).length;
+        var pages_total = Math.ceil(itemsLength_total / itemsPerPage_total);
+        var item_total = 1;
+        var page_total = 1;
+        var selector_total = itemSelector_total;
+        var exclusives_total = [];
+
+        if (currentFilter_total != '*') {
+            exclusives_total.push(selector_total + '.' + currentFilter_total);
+        }
+
+        filterValue_total = exclusives_total.length ? exclusives_total.join('') : '*';
+
+        $container_total.children(filterValue_total).each(function () {
+            if (item_total > itemsPerPage_total) {
+                page_total++;
+                item_total = 1;
+            }
+            wordPage_total = page_total.toString();
+
+            var classes_total = $(this).attr('class').split(' ');
+            var lastClass_total = classes_total[classes_total.length - 1];
+
+            if (lastClass_total.length < 4) {
+                $(this).removeClass();
+                classes_total.pop();
+                classes_total.push(wordPage_total);
+                classes_total = classes_total.join(' ');
+                $(this).addClass(classes_total);
+            } else {
+                $(this).addClass(wordPage_total);
+            }
+            item_total++;
+        });
+        currentNumberPages_total = page_total;
+    }();
+
+    var CreatePagers_total = function () {
+
+        var $isotopePager_total = ($('.' + pagerClass_total).length == 0) ? $('<div class="' + pagerClass_total + '"></div>') : $('.' + pagerClass_total);
+
+        $isotopePager_total.html('');
+        if (currentNumberPages_total > 1) {
+            for (var i = 0; i < currentNumberPages_total; i++) {
+                var $pager_total = '';
+
+                if (currentPage_total == i + 1) {
+                    $pager_total = $('<a href="javascript:void(0);" class="active tm-paging-link" ' + pageAttribute_total + '="' + (i + 1) + '"></a>');
+                } else {
+                    $pager_total = $('<a href="javascript:void(0);" class="tm-paging-link" ' + pageAttribute_total + '="' + (i + 1) + '"></a>');
+                }
+
+                $pager_total.html(i + 1);
+
+                $pager_total.click(function () {
+                    $('.tm-paging-link').removeClass('active');
+                    $(this).addClass('active');
+                    var page_total = $(this).eq(0).attr(pageAttribute_total);
+                    goToPage_total(page_total);
+                });
+                $pager_total.appendTo($isotopePager_total);
+            }
+        }
+        $container_total.after($isotopePager_total);
+    }();
+}
+
+setPagination_total();
+goToPage_total(1);
+
+$('.tm-total-link').click(function (e) {
+    var filter_total = $(this).data('filter');
+    currentFilter_total = filter_total;
+    setPagination_total();
+    goToPage_total(1);
+    $('.tm-total-link').removeClass('active');
+    $(e.target).addClass('active');
+})
+
+/****************** Window resize ******************/
+
+$(window).resize(function () {
+    itemsPerPage_total = defineItemsPerPage_total();
+    setPagination_total();
+    goToPage_total(1);
+});
+
+/****************** Magnific Popup ******************/
+
+/****************** Smooth Scrolling *****************/
+
+$(".tm-btn-next").on('click', function (event) {
+    if (this.hash !== "") {
+        event.preventDefault_total();
+        var hash_total = this.hash_total;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function () {
+            // window.location.hash = hash;
+        });
+    }
+});
 
     /*************** Gallery ******************/
 
@@ -169,13 +324,13 @@ $(document).ready(function () {
 
     /****************** Magnific Popup ******************/
 
-    $('.tm-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
+    // jQuery를 사용하여 클릭 가능한 이미지의 동작 설정
+$(document).ready(function () {
+    $('.clickable-image').click(function () {
+        var url = $(this).data('url'); // 클릭 가능한 이미지에 저장된 URL 가져오기
+        window.location.href = url; // 해당 URL로 이동
     });
+});
 
     /****************** Smooth Scrolling *****************/
 
@@ -333,13 +488,28 @@ $(document).ready(function () {
 
     /****************** Magnific Popup ******************/
 
-    $('.tm-news').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        news: {
-            enabled: true
-        }
-    });
+// 버튼 클릭 여부를 저장하는 변수
+let isClicked = false;
+
+// 버튼 클릭 이벤트 처리
+$('.show-article-btn').click(function() {
+    // isClicked 상태 변경
+    isClicked = !isClicked;
+    
+    // 버튼 아이콘 변경
+    if (isClicked) {
+        $(this).find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    } else {
+        $(this).find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    }
+
+    // 기사 내용 토글
+    $('.article-content').slideToggle();
+});
+
+
+    
+
 
     /****************** Smooth Scrolling *****************/
 
@@ -497,13 +667,8 @@ $(document).ready(function () {
 
     /****************** Magnific Popup ******************/
 
-    $('.tm-drunk').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        drunk: {
-            enabled: true
-        }
-    });
+
+
 
     /****************** Smooth Scrolling *****************/
 
@@ -519,7 +684,162 @@ $(document).ready(function () {
             });
         }
     });
+// dnews
 
+var itemSelector_dnews = ".tm-dnews-item";
+var responsiveIsotope_dnews = [[480, 4], [720, 6], [1920, 9]];
+var itemsPerPageDefault_dnews = 12;
+var itemsPerPage_dnews = defineItemsPerPage_dnews();
+var currentNumberPages_dnews = 1;
+var currentPage_dnews = 1;
+var currentFilter_dnews = '*';
+var filterValue_dnews = "";
+var pageAttribute_dnews = 'data-page';
+var pagerClass_dnews = 'tm-paging';
+var $container_dnews = $('.tm-dnews').isotope({
+    itemSelector_dnews: itemSelector_dnews
+});
+
+$container_dnews.imagesLoaded().progress(function () {
+    $container_dnews.isotope('layout');
+});
+
+function changeFilter_dnews(selector) { $container_dnews.isotope({ filter: selector }); }
+
+function goToPage_dnews(n) {
+    currentPage_dnews = n;
+    var selector_dnews = itemSelector_dnews;
+    var exclusives_dnews = [];
+
+    if (currentFilter_dnews != '*') {
+        exclusives_dnews.push(selector_dnews + '.' + currentFilter_dnews);
+    }
+
+    filterValue_dnews = exclusives_dnews.length ? exclusives_dnews.join('') : '*';
+
+    var wordPage_dnews = currentPage_dnews.toString();
+    filterValue_dnews += ('.' + wordPage_dnews);
+    changeFilter_dnews(filterValue_dnews);
+}
+
+function defineItemsPerPage_dnews() {
+    var pages_dnews = itemsPerPageDefault_dnews;
+
+    for (var i = 0; i < responsiveIsotope_dnews.length; i++) {
+        if ($(window).width() <= responsiveIsotope_dnews[i][0]) {
+            pages_dnews = responsiveIsotope_dnews[i][1];
+            break;
+        }
+    }
+    return pages_dnews;
+}
+
+function setPagination_dnews() {
+    var SettingsPagesOnItems_dnews = function () {
+        var itemsLength_dnews = $container_dnews.children(itemSelector_dnews).length;
+        var pages_dnews = Math.ceil(itemsLength_dnews / itemsPerPage_dnews);
+        var item_dnews = 1;
+        var page_dnews = 1;
+        var selector_dnews = itemSelector_dnews;
+        var exclusives_dnews = [];
+
+        if (currentFilter_dnews != '*') {
+            exclusives_dnews.push(selector_dnews + '.' + currentFilter_dnews);
+        }
+
+        filterValue_dnews = exclusives_dnews.length ? exclusives_dnews.join('') : '*';
+
+        $container_dnews.children(filterValue_dnews).each(function () {
+            if (item_dnews > itemsPerPage_dnews) {
+                page_dnews++;
+                item_dnews = 1;
+            }
+            wordPage_dnews = page_dnews.toString();
+
+            var classes_dnews = $(this).attr('class').split(' ');
+            var lastClass_dnews = classes_dnews[classes_dnews.length - 1];
+
+            if (lastClass_dnews.length < 4) {
+                $(this).removeClass();
+                classes_dnews.pop();
+                classes_dnews.push(wordPage_dnews);
+                classes_dnews = classes_dnews.join(' ');
+                $(this).addClass(classes_dnews);
+            } else {
+                $(this).addClass(wordPage_dnews);
+            }
+            item_dnews++;
+        });
+        currentNumberPages_dnews = page_dnews;
+    }();
+
+    var CreatePagers_dnews = function () {
+
+        var $isotopePager_dnews = ($('.' + pagerClass_dnews).length == 0) ? $('<div class="' + pagerClass_dnews + '"></div>') : $('.' + pagerClass_dnews);
+
+        $isotopePager_dnews.html('');
+        if (currentNumberPages_dnews > 1) {
+            for (var i = 0; i < currentNumberPages_dnews; i++) {
+                var $pager_dnews = '';
+
+                if (currentPage_dnews == i + 1) {
+                    $pager_dnews = $('<a href="javascript:void(0);" class="active tm-paging-link" ' + pageAttribute_dnews + '="' + (i + 1) + '"></a>');
+                } else {
+                    $pager_dnews = $('<a href="javascript:void(0);" class="tm-paging-link" ' + pageAttribute_dnews + '="' + (i + 1) + '"></a>');
+                }
+
+                $pager_dnews.html(i + 1);
+
+                $pager_dnews.click(function () {
+                    $('.tm-paging-link').removeClass('active');
+                    $(this).addClass('active');
+                    var page_dnews = $(this).eq(0).attr(pageAttribute_dnews);
+                    goToPage_dnews(page_dnews);
+                });
+                $pager_dnews.appendTo($isotopePager_dnews);
+            }
+        }
+        $container_dnews.after($isotopePager_dnews);
+    }();
+}
+
+setPagination_dnews();
+goToPage_dnews(1);
+
+$('.tm-dnews-link').click(function (e) {
+    var filter_dnews = $(this).data('filter');
+    currentFilter_dnews = filter_dnews;
+    setPagination_dnews();
+    goToPage_dnews(1);
+    $('.tm-dnews-link').removeClass('active');
+    $(e.target).addClass('active');
+})
+
+/****************** Window resize ******************/
+
+$(window).resize(function () {
+    itemsPerPage_dnews = defineItemsPerPage_dnews();
+    setPagination_dnews();
+    goToPage_dnews(1);
+});
+
+/****************** Magnific Popup ******************/
+
+
+/****************** Smooth Scrolling *****************/
+
+$(".tm-btn-next").on('click', function (event) {
+    if (this.hash !== "") {
+        event.preventDefault_dnews();
+        var hash_dnews = this.hash_dnews;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function () {
+            // window.location.hash = hash;
+        });
+    }
+});
     // holiday
     var itemSelector_holiday = ".tm-holiday-item";
     var responsiveIsotope_holiday = [[480, 4], [720, 6], [1920, 9]];
@@ -660,13 +980,7 @@ $(document).ready(function () {
 
     /****************** Magnific Popup ******************/
 
-    $('.tm-holiday').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        holiday: {
-            enabled: true
-        }
-    });
+
 
     /****************** Smooth Scrolling *****************/
 
@@ -683,3 +997,160 @@ $(document).ready(function () {
         }
     });
 });
+
+// hnews
+var itemSelector_hnews = ".tm-hnews-item";
+var responsiveIsotope_hnews = [[480, 4], [720, 6], [1920, 9]];
+var itemsPerPageDefault_hnews = 12;
+var itemsPerPage_hnews = defineItemsPerPage_hnews();
+var currentNumberPages_hnews = 1;
+var currentPage_hnews = 1;
+var currentFilter_hnews = '*';
+var filterValue_hnews = "";
+var pageAttribute_hnews = 'data-page';
+var pagerClass_hnews = 'tm-paging';
+var $container_hnews = $('.tm-hnews').isotope({
+    itemSelector_hnews: itemSelector_hnews
+});
+
+$container_hnews.imagesLoaded().progress(function () {
+    $container_hnews.isotope('layout');
+});
+
+function changeFilter_hnews(selector) { $container_hnews.isotope({ filter: selector }); }
+
+function goToPage_hnews(n) {
+    currentPage_hnews = n;
+    var selector_hnews = itemSelector_hnews;
+    var exclusives_hnews = [];
+
+    if (currentFilter_hnews != '*') {
+        exclusives_hnews.push(selector_hnews + '.' + currentFilter_hnews);
+    }
+
+    filterValue_hnews = exclusives_hnews.length ? exclusives_hnews.join('') : '*';
+
+    var wordPage_hnews = currentPage_hnews.toString();
+    filterValue_hnews += ('.' + wordPage_hnews);
+    changeFilter_hnews(filterValue_hnews);
+}
+
+function defineItemsPerPage_hnews() {
+    var pages_hnews = itemsPerPageDefault_hnews;
+
+    for (var i = 0; i < responsiveIsotope_hnews.length; i++) {
+        if ($(window).width() <= responsiveIsotope_hnews[i][0]) {
+            pages_hnews = responsiveIsotope_hnews[i][1];
+            break;
+        }
+    }
+    return pages_hnews;
+}
+
+function setPagination_hnews() {
+    var SettingsPagesOnItems_hnews = function () {
+        var itemsLength_hnews = $container_hnews.children(itemSelector_hnews).length;
+        var pages_hnews = Math.ceil(itemsLength_hnews / itemsPerPage_hnews);
+        var item_hnews = 1;
+        var page_hnews = 1;
+        var selector_hnews = itemSelector_hnews;
+        var exclusives_hnews = [];
+
+        if (currentFilter_hnews != '*') {
+            exclusives_hnews.push(selector_hnews + '.' + currentFilter_hnews);
+        }
+
+        filterValue_hnews = exclusives_hnews.length ? exclusives_hnews.join('') : '*';
+
+        $container_hnews.children(filterValue_hnews).each(function () {
+            if (item_hnews > itemsPerPage_hnews) {
+                page_hnews++;
+                item_hnews = 1;
+            }
+            wordPage_hnews = page_hnews.toString();
+
+            var classes_hnews = $(this).attr('class').split(' ');
+            var lastClass_hnews = classes_hnews[classes_hnews.length - 1];
+
+            if (lastClass_hnews.length < 4) {
+                $(this).removeClass();
+                classes_hnews.pop();
+                classes_hnews.push(wordPage_hnews);
+                classes_hnews = classes_hnews.join(' ');
+                $(this).addClass(classes_hnews);
+            } else {
+                $(this).addClass(wordPage_hnews);
+            }
+            item_hnews++;
+        });
+        currentNumberPages_hnews = page_hnews;
+    }();
+
+    var CreatePagers_hnews = function () {
+
+        var $isotopePager_hnews = ($('.' + pagerClass_hnews).length == 0) ? $('<div class="' + pagerClass_hnews + '"></div>') : $('.' + pagerClass_hnews);
+
+        $isotopePager_hnews.html('');
+        if (currentNumberPages_hnews > 1) {
+            for (var i = 0; i < currentNumberPages_hnews; i++) {
+                var $pager_hnews = '';
+
+                if (currentPage_hnews == i + 1) {
+                    $pager_hnews = $('<a href="javascript:void(0);" class="active tm-paging-link" ' + pageAttribute_hnews + '="' + (i + 1) + '"></a>');
+                } else {
+                    $pager_hnews = $('<a href="javascript:void(0);" class="tm-paging-link" ' + pageAttribute_hnews + '="' + (i + 1) + '"></a>');
+                }
+
+                $pager_hnews.html(i + 1);
+
+                $pager_hnews.click(function () {
+                    $('.tm-paging-link').removeClass('active');
+                    $(this).addClass('active');
+                    var page_hnews = $(this).eq(0).attr(pageAttribute_hnews);
+                    goToPage_hnews(page_hnews);
+                });
+                $pager_hnews.appendTo($isotopePager_hnews);
+            }
+        }
+        $container_hnews.after($isotopePager_hnews);
+    }();
+}
+
+setPagination_hnews();
+goToPage_hnews(1);
+
+$('.tm-hnews-link').click(function (e) {
+    var filter_hnews = $(this).data('filter');
+    currentFilter_hnews = filter_hnews;
+    setPagination_hnews();
+    goToPage_hnews(1);
+    $('.tm-hnews-link').removeClass('active');
+    $(e.target).addClass('active');
+})
+
+/****************** Window resize ******************/
+
+$(window).resize(function () {
+    itemsPerPage_hnews = defineItemsPerPage_hnews();
+    setPagination_hnews();
+    goToPage_hnews(1);
+});
+
+/****************** Magnific Popup ******************/
+
+
+/****************** Smooth Scrolling *****************/
+
+$(".tm-btn-next").on('click', function (event) {
+    if (this.hash !== "") {
+        event.preventDefault_hnews();
+        var hash_hnews = this.hash_hnews;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function () {
+            // window.location.hash = hash;
+        });
+    }
+});
+

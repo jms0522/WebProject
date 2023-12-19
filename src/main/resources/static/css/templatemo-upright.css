@@ -280,7 +280,38 @@ hr {
 .tm-post-link:hover {
 	color: #068ccf;
 }
+/* wheather section*/
+/* 기본 버튼 스타일 */
+.col-lg-6 {
+    width: 100%; /* 현재 부모 요소의 100% 너비를 사용하도록 설정 */
+    white-space: nowrap;
+}
+.weather-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: #006699;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+	white-space: normal;
+}
 
+/* 마우스 호버 시 배경색 변화 */
+.weather-btn:hover {
+    background-color: #ddd;
+}
+/* news size */
+.nav-news{
+	position:relative;
+	color: #006699;
+	font-size: 1rem;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 15%;
+}
 /* total section */
 .tm-total {
 	position: relative;
@@ -296,6 +327,7 @@ hr {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-total-links li {
@@ -391,9 +423,9 @@ a.tm-paging-link:hover {
 }
 
 .tm-total figure.effect-honey iframe {
-	width: 500px;
+	width:700px;
 	/* 원하는 너비로 조정 */
-	height: 400px;
+	height: 700px;
 	/* 원하는 높이로 조정 */
 	margin-right: -2%;
 	/* 다른 스타일 속성들... */
@@ -403,12 +435,14 @@ a.tm-paging-link:hover {
 .tm-total figure {
 	position: relative;
 	z-index: 50;
-	float: left;
+	float: center;
 	overflow: hidden;
-	margin: -2%;
-	margin-right: -2%;
-	height: 500px;
-	width: 500px;
+	margin-top: 10%;
+	margin-bottom: -2%;
+	margin-right: 50%;
+	margin-left: 15%;
+	height: 700px;
+	width: 700px;
 	background: transparent;
 	text-align: center;
 	cursor: pointer;
@@ -489,6 +523,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-gallery-links li {
@@ -508,6 +543,49 @@ a.tm-paging-link:hover {
 
 .tm-gallery-link-icon {
 	width: 25px;
+}
+.article-box {
+    border: 1px solid #ccc;
+	border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative; /* 컨테이너 위치 지정 */
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.text-container {
+    position: relative;
+}
+
+.article-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+	font-weight: bold;
+	
+}
+
+.article-date {
+    font-size: 18px;
+    opacity: 0.7;
+    font-weight: lighter;
+    margin-top: 5px;
+    position: absolute;
+    top: 40px; /* 원하는 위치 조정 */
+    left: 0;
+}
+
+
+
+/* 별도의 CSS 파일에서 */
+.clickable-image img {
+    width: 100%; /* 이미지의 폭 설정 */
+    height: 100%; /* 이미지의 높이를 자동으로 조정 */
+    /* 다른 스타일 속성들 */
 }
 
 .tm-paging {
@@ -584,9 +662,9 @@ a.tm-paging-link:hover {
 }
 
 .tm-gallery figure.effect-honey iframe {
-	width: 500px;
+	width: 700px;
 	/* 원하는 너비로 조정 */
-	height: 400px;
+	height: 700px;
 	/* 원하는 높이로 조정 */
 	margin-right: -2%;
 	/* 다른 스타일 속성들... */
@@ -596,12 +674,14 @@ a.tm-paging-link:hover {
 .tm-gallery figure {
 	position: relative;
 	z-index: 50;
-	float: left;
+	float: center;
 	overflow: hidden;
-	margin: -2%;
-	margin-right: -2%;
-	height: 500px;
-	width: 500px;
+	margin-top: 10%;
+	margin-bottom: -2%;
+	margin-right: 50%;
+	margin-left: 15%;
+	height: 700px;
+	width: 700px;
 	background: transparent;
 	text-align: center;
 	cursor: pointer;
@@ -682,6 +762,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-news-links li {
@@ -875,6 +956,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-drunk-links li {
@@ -970,9 +1052,9 @@ a.tm-paging-link:hover {
 }
 
 .tm-drunk figure.effect-honey iframe {
-	width: 500px;
+	width: 700px;
 	/* 원하는 너비로 조정 */
-	height: 400px;
+	height: 700px;
 	/* 원하는 높이로 조정 */
 	margin-right: -2%;
 	/* 다른 스타일 속성들... */
@@ -982,12 +1064,14 @@ a.tm-paging-link:hover {
 .tm-drunk figure {
 	position: relative;
 	z-index: 50;
-	float: left;
+	float: center;
 	overflow: hidden;
-	margin: -2%;
-	margin-right: -2%;
-	height: 500px;
-	width: 500px;
+	margin-top: 10%;
+	margin-bottom: -2%;
+	margin-right: 50%;
+	margin-left: 15%;
+	height: 700px;
+	width: 700px;
 	background: transparent;
 	text-align: center;
 	cursor: pointer;
@@ -999,6 +1083,8 @@ a.tm-paging-link:hover {
 	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
+	margin-left: -6%;
+	
 }
 
 .tm-drunk figure figcaption {
@@ -1068,6 +1154,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-dnews-links li {
@@ -1261,6 +1348,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-holiday-links li {
@@ -1356,9 +1444,9 @@ a.tm-paging-link:hover {
 }
 
 .tm-holiday figure.effect-honey iframe {
-	width: 500px;
+	width: 700px;
 	/* 원하는 너비로 조정 */
-	height: 400px;
+	height: 700px;
 	/* 원하는 높이로 조정 */
 	margin-right: -2%;
 	/* 다른 스타일 속성들... */
@@ -1368,12 +1456,14 @@ a.tm-paging-link:hover {
 .tm-holiday figure {
 	position: relative;
 	z-index: 50;
-	float: left;
+	float: center;
 	overflow: hidden;
-	margin: -2%;
-	margin-right: -2%;
-	height: 500px;
-	width: 500px;
+	margin-top: 10%;
+	margin-bottom: -2%;
+	margin-right: 50%;
+	margin-left: 15%;
+	height: 700px;
+	width: 700px;
 	background: transparent;
 	text-align: center;
 	cursor: pointer;
@@ -1382,8 +1472,10 @@ a.tm-paging-link:hover {
 .tm-holiday figure img {
 	position: relative;
 	display: block;
-	min-height: 100%;
-	max-width: 100%;
+	min-height: 75%;
+	max-width: 75%;
+	margin-right: -2;
+	margin-left: 5%;
 	opacity: 0.8;
 }
 
@@ -1454,6 +1546,7 @@ a.tm-paging-link:hover {
 	flex-wrap: wrap;
 	margin-left: -15px;
 	margin-bottom: 0;
+	font-size: 25px;
 }
 
 .tm-hnews-links li {

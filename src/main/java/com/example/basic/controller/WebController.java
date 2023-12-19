@@ -23,7 +23,7 @@ public class WebController {
     @GetMapping("/index")
     public String index() {
         log.info("[WebController][index] Start");
-        return "mainpage";
+        return "index";
     }
 
     @GetMapping("/logout")
