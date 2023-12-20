@@ -39,3 +39,15 @@ spring:
     openweathermap:
         api:
         key: 2f40a6b63771f57f788b6387e107c062
+
+    # naver:
+    #     api:
+    #     url:  'https://openapi.naver.com/v1/cafe/12345678/menu/2/articles.json'
+    #     client:
+    #     id: l0anrUkpiGhTbc12_OFH
+    #     secret: zvuqwUDLHT
+
+    logging:
+        level:
+            org.springframework: DEBUG
+

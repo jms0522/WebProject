@@ -4,37 +4,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freezing accident map</title>
-    <link rel="stylesheet" href="../static/css/index.css"> <!-- 외부 CSS 파일 링크 -->
+    <title>Upright</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
+    <link rel="stylesheet" href="../static/css/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/-->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css"> <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="../static/css/slick/slick.min.css"> <!-- https://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" href="../static/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="../static/css/templatemo-upright.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KyVXi1hfxDglJ2st8Gnydi4C1Xoiim0mZvwGTw4KZ9ZC7vvZwOmmFVlTuGrx7p3jkKQax35DxmJVpESy7BPz1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
 </head>
 
-<body>
-    
-    <a href="./loginPage" class="login-btn">로그인</a>
-    <a href="./join" class="join-btn">회원가입</a>
-    <div id="navbar">
-        <a href="#top">통계</a>
-        <a href="#top1">차트</a>
-        <a href="#top2">지도</a>
-        <a href="#top3">뉴스</a>
+<body style="background-color: transparent;">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Leftside bar -->
+            <div id="tm-sidebar" class="tm-sidebar">
+                <nav class="tm-nav">
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <div class="tm-brand-box">
+                            <h1 class="tm-brand">Upright</h1>
+                        </div>
+                        <ul id="tm-main-nav">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link current">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-home nav-icon"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#total" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    종합 정보
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#gallery" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    결빙 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#frozen_news" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images-news nav-icon"></i>
+                                    결빙 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#drunk" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    음주 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#dnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    음주 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#holiday" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-user-friends nav-icon"></i>
+                                    연휴 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#hnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    연휴 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-envelope nav-icon"></i>
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link external" target="_parent" rel="sponsored" href="./loginPage">
+                                    <div class=" triangle-right">
+                    </div>
+                    <i class="fas fa-external-link-alt nav-icon"></i>
+                    로그인
+                    </a>
+                    </li>
+                    </ul>
+            </div>
+            <footer class="mb-3 tm-mt-100">
+                Design: <a href="https://templatemo.com" target="_parent" rel="sponsored">TemplateMo</a>
+            </footer>
+            </nav>
+        </div>
+
+        <div class="tm-main">
+            <!-- Home section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-01.jpg"></div>
+                <section id="home" class="tm-section">
+                    <h2 class="tm-text-primary">실시간 날씨 기온</h2>
+                    <hr class="mb-5">
+                    <div class="row">
+                        <div class="col-lg-6 tm-col-home mb-4">
+                            <button class="weather-btn" onclick="getWeather('Seoul')">서울</button>
+                            <button class="weather-btn" onclick="getWeather('Busan')">부산</button>
+                            <button class="weather-btn" onclick="getWeather('Daegu')">대구</button>
+                            <button class="weather-btn" onclick="getWeather('Gyeonggi-do')">경기</button>
+                            <button class="weather-btn" onclick="getWeather('Incheon')">인천</button>
+                            <button class="weather-btn" onclick="getWeather('Daejeon')">대전</button>
+                            <button class="weather-btn" onclick="getWeather('Gwangju')">광주</button>
+                            <button class="weather-btn" onclick="getWeather('Gangneung', 'Sokcho')">강원</button>
+                            <button class="weather-btn" onclick="getWeather('Ulsan')">울산</button>
+                            <button class="weather-btn" onclick="getWeather('Sejong')">충청</button>
+                            <button class="weather-btn" onclick="getWeather('Mokpo')">전라</button>
+                            <button class="weather-btn" onclick="getWeather('Changwon')">경상</button>
+                            <button class="weather-btn" onclick="getWeather('Jeju')">제주</button>
+                            <!-- 원하는 지역 버튼을 추가할 수 있습니다. -->
+                            <div id="weather-container">
+                                <!-- 날씨 정보가 표시될 곳 -->
+                                <script>
+                                    // OpenWeatherMap API 키
+                                    const apiKey = '2f40a6b63771f57f788b6387e107c062';
+                                    // API 호출 함수
+                                    async function getWeather(city) {
+                                        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+                                        const data = await response.json();
+                                        // 날씨 정보를 표시하는 함수 호출
+                                        displayWeather(data);
+                                    }
+                                    // 날씨 정보를 표시하는 함수
+                                    function displayWeather(data) {
+                                        const weatherContainer = document.getElementById('weather-container');
+                                        weatherContainer.innerHTML = '';
+                                        const cityName = document.createElement('h2');
+                                        cityName.textContent = data.name;
+                                        weatherContainer.appendChild(cityName);
+                                        const temperature = document.createElement('p');
+                                        temperature.textContent = `온도: ${data.main.temp}°C`;
+                                        weatherContainer.appendChild(temperature);
+                                        const description = document.createElement('p');
+                                        description.textContent = `날씨: ${data.weather[0].description}`;
+                                        weatherContainer.appendChild(description);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row tm-row-home">
+                        <div class="tm-col-home tm-col-home-l">
+                            <div class="media mb-4">
+                                <i class="fas fa-scroll fa-4x tm-post-icon tm-text-primary"></i>
+                                <div class="media-body"></div>
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <i class="fas fa-cloud-sun fa-4x tm-post-icon tm-text-primary"></i>
+                            <div class="media-body">
+                                <a href="#" class="d-block mb-2 tm-text-primary tm-post-link"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="tm-col-home mr-0 ml-auto">
+            </div>
+        </div>
+
+        </section>
     </div>
-    <h1 id="top">사고 보드</h1>
-    <div class="stats-box">
-        <div class="title">빙결 사고 통계</div>
-        <div class="content">
-        <div class="section">사고건수 <br>50</div>
-        <div class="section">사망자 수 <br> 5</div>
-        <div class="section">부상자 수 <br> 20</div>
-        <div class="section">관련 기사 <br> 10</div>
+
+    <!-- total section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-01.jpg"></div>
+        <section id="total" class="tm-section">
+            <h2 class="tm-text-primary">종합 정보</h2>
+            <hr class="mb-5">
+            <ul class="tm-total-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-total-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-total-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-total-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-total-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-total-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-total-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-total">
+                <figure class="effect-honey tm-total-item portrait">
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/totalchart.html"
+                        allowTransparency="true"></iframe>
+                </figure>
+                <figure class="effect-honey tm-total-item nature">
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                        allowTransparency="true"></iframe>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="gallery" class="tm-section">
+            <h2 class="tm-text-primary">결빙 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-gallery-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-gallery-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="animal">
+                        <i class="fas fa-paw tm-gallery-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-gallery">
+                <figure class="effect-honey tm-gallery-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/ice_chart.html"
+                        allowTransparency="true"></iframe>
+                    
+                </figure>
+                
+                <figure class="effect-honey tm-gallery-item nature">
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/map.html"
+                        allowTransparency="true"></iframe>
+                
+                </figure>
+            
+                    <figure class="effect-honey tm-gallery-item animal">
+                    <div class="clickable-image" data-url="http://www.newspeople.co.kr/m/view.jsp?ncd=4546">
+                        <img src="../static/img/frezing1.jpg" alt="Image" />
+                        </div>
+                    </figure>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- news section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="frozen_news" class="tm-section">
+            <h2 class="tm-text-primary">결빙사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-news-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-news-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="seoul">
+                        <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                        서울
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="gyeonggi">
+                        <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                        경기
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="inchon">
+                        <i class="fas fa-paw tm-gallery-link-icon"></i>
+                        인천
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-news">
+                <figure class="effect-honey tm-news-item seoul">
+                    <div class="article-box">
+                        <div class="text-container">
+                            <a href="http://www.newspeople.co.kr/m/view.jsp?ncd=4546" class="article-title">기사 제목</h3>
+                            <p class="article-date">날짜</p>
+                        </div>
+        
+        
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item gyeonggi">
+                    <input type="button" value="hello">
+                </figure>
+                <figure class="effect-honey tm-news-item inchon">
+                    <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                    <figcaption>
+                        <h2><i>Dreamy Honey</i></h2>
+                        <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- drunk section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="drunk" class="tm-section">
+            <h2 class="tm-text-primary">음주 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-drunk-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-drunk-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-drunk-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-drunk-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-drunk-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="animal">
+                        <i class="fas fa-paw tm-drunk-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-drunk">
+                <figure class="effect-honey tm-drunk-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/drunk_chart.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-drunk-item nature">
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/drunk_map.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-drunk-item animal">
+                
+                        <figure class="effect-honey tm-drunk-item animal">
+                            <a href="https://blog.naver.com/loveacrc/222143004381">
+                            <img src="../static/img/drunk1.jpg" alt="Image" />
+                        </figure>
+                    </a>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- dnews section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="dnews" class="tm-section">
+            <h2 class="tm-text-primary">음주사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-dnews-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-dnews-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="seoul">
+                        <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                        서울
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="gyeonggi">
+                        <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                        경기
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="inchon">
+                        <i class="fas fa-paw tm-gallery-link-icon"></i>
+                        인천
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-dnews">
+                <figure class="effect-honey tm-dnews-item seoul">
+                    <li>seoul</li>
+                </figure>
+                <figure class="effect-honey tm-dnews-item gyeonggi">
+                    <div class="article-box">
+                        <div class="text-container" id="news-container">
+                            <!-- JavaScript가 여기에 기사를 동적으로 삽입합니다 -->
+                            <a href= "url" class="article-title">기사 제목</h3>
+                                <p class="article-date">날짜</p>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-dnews-item inchon">
+                    <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                    <figcaption>
+                        <h2><i>Dreamy Honey</i></h2>
+                        <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- holiday section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="holiday" class="tm-section">
+            <h2 class="tm-text-primary">연휴 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-holiday-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-holiday-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-holiday-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-holiday-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-holiday-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="animal">
+                        <i class="fas fa-paw tm-holiday-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-holiday">
+                <figure class="effect-honey tm-holiday-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/tmzone_chart.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-holiday-item nature">
+                    <iframe src="http://127.0.0.1:5500/basic/src/main/resources/static/tmzone_map.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-holiday-item animal">
+                    <a href="https://m.blog.naver.com/ksea1004/222862212171">
+                        <figure class="effect-honey tm-gallery-item animal">
+                            <img src="../static/img/timezone1.png" alt="Image" />
+                
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- hnews section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="hnews" class="tm-section">
+            <h2 class="tm-text-primary">연휴사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-hnews-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-hnews-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-hnews-link" data-filter="seoul">
+                        <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                        서울
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-hnews-link" data-filter="gyeonggi">
+                        <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                        경기
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-hnews-link" data-filter="inchon">
+                        <i class="fas fa-paw tm-gallery-link-icon"></i>
+                        인천
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-hnews">
+                <figure class="effect-honey tm-hnews-item seoul">
+                    <li>seoul</li>
+                </figure>
+                <figure class="effect-honey tm-hnews-item gyeonggi">
+                    <input type="button" value="hello">
+                </figure>
+                <figure class="effect-honey tm-hnews-item inchon">
+                    <img src="../static/img/gallery/tn/animal-01.jpg" alt="Image" />
+                    <figcaption>
+                        <h2><i>Dreamy Honey</i></h2>
+                        <a href="../static/img/gallery/animal-01.jpg">View more</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-04.jpg"></div>
+        <div id="contact" class="tm-section">
+            <h2 class="tm-text-primary">사고 지역 로드뷰</h2>
+            <hr class="mb-5">
+            <div class="row">
+                <div class="col-xl-6 tm-contact-col-l mb-4">
+                    <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                        <div class="form-group">
+                            <h3>사고 발생 지도</h3>
+                            <div id="map1" style="width:100%;height:350px;"></div>
+                                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
+                                <script>
+                                var mapContainer1 = document.getElementById('map1'),
+                                    mapOption1 = {
+                                        center: new kakao.maps.LatLng(37.524665766713, 127.052190456925),
+                                        level: 5
+                                    };
+
+                                var map1= new kakao.maps.Map(mapContainer1, mapOption1);
+
+                                var positions = [
+                                    {
+                                        title: '서울특별시 종로구 창신동(동묘앞역 부근)',
+                                        latlng: new kakao.maps.LatLng(37.566157072991, 126.983858947134)
+                                    },
+                                    {
+                                        title: '서울특별시 중구 을지로2가(을지로1가을지로진출1 부근)',
+                                        latlng: new kakao.maps.LatLng(37.54183637415, 127.02897292766)
+                                    },
+                                    {
+                                        title: '지점명:서울특별시 성동구 성수동1가(동부간선도로강변북로 부근)',
+                                        latlng: new kakao.maps.LatLng(37.541293955253, 127.071130654057)
+                                    },
+                                    {
+                                        title: '서울특별시 광진구 화양동(건대입구역 부근)',
+                                        latlng: new kakao.maps.LatLng(37.560578125981, 127.069819950631)
+                                    },
+                                    {
+                                        title: '서울특별시 동대문구 장안동(동부간선도로천호대로 부근)',
+                                        latlng: new kakao.maps.LatLng(37.56692083393, 127.062745086618)
+                                    },
+                                    {
+                                        title: '서울특별시 동대문구 장안동(장안유도관 부근)',
+                                        latlng: new kakao.maps.LatLng(37.661225768955, 127.058132160772)
+                                    },
+                                    {
+                                        title: '서울특별시 노원구 상계동(상계79단지 부근)',
+                                        latlng: new kakao.maps.LatLng(37.560578125981, 127.069819950631)
+                                    },
+                                    {
+                                        title: '서울특별시 노원구 상계동(노원지하차도남측 부근)',
+                                        latlng: new kakao.maps.LatLng(37.651741497073, 127.055493576868)
+                                    },
+                                    {
+                                        title: '서울특별시 노원구 상계동(노원역 부근)',
+                                        latlng: new kakao.maps.LatLng(37.626749475909, 127.075619055276)
+                                    },
+                                    {
+                                        title: '서울특별시 은평구 역촌동(역촌사거리 부근)',
+                                        latlng: new kakao.maps.LatLng(37.559248163573, 126.832251717744)
+                                    },
+                                    {
+                                        title: '서울특별시 강서구 가양동(내발산삼거리 부근)',
+                                        latlng: new kakao.maps.LatLng(37.560735786129, 126.819693153917)
+                                    },
+                                    {
+                                        title: '서울특별시 동작구 동작동(서초구동작구경계4 부근)',
+                                        latlng: new kakao.maps.LatLng(37.46688151577, 126.948226848991)
+                                    },
+                                    {
+                                        title: '서울특별시 관악구 신림동(서울대운동장관악로진 부근)',
+                                        latlng: new kakao.maps.LatLng(37.516220683938, 127.019608851069)
+                                    },
+                                    {
+                                        title: '서울특별시 서초구 잠원동(신사역 부근)',
+                                        latlng: new kakao.maps.LatLng(37.499953724286, 127.033625266294)
+                                    },
+                                                                        {
+                                        title: '지점명:서울특별시 강남구 역삼동(뱅뱅사거리 부근)',
+                                        latlng: new kakao.maps.LatLng(37.524665766713, 127.052190456925)
+                                    },
+                                                                        {
+                                        title: '서울특별시 강남구 청담동(영동대교남단삼거리도 부근)',
+                                        latlng: new kakao.maps.LatLng(37.524295867461, 127.047371598022)
+                                    },
+                                                                        {
+                                        title: '서울특별시 강남구 논현동(청담사거리 부근)',
+                                        latlng: new kakao.maps.LatLng(37.478365612784, 127.114276844202)
+                                    },
+                                                                        {
+                                        title: '서울특별시 송파구 문정동(숯내교서단 부근)',
+                                        latlng: new kakao.maps.LatLng(37.438661566979, 126.681923479886)
+                                    },
+                                                                        {
+                                        title: '서울특별시 노원구 공릉동(미건의료기 부근)',
+                                        latlng: new kakao.maps.LatLng(37.608060353304, 126.920107616175)
+                                    }
+                                    
+                                ];
+                                var markers = [];
+
+                                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+                                var imageSize = new kakao.maps.Size(24, 35);
+                                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                                for (var i = 0; i < positions.length; i++) {
+                                    var marker = new kakao.maps.Marker({
+                                        map: map1,
+                                        position: positions[i].latlng,
+                                        title: positions[i].title,
+                                        image: markerImage
+                                    });
+
+                                    markers.push(marker); // 마커를 배열에 추가
+
+                                    // 마커를 클릭했을 때 로드뷰로 이동하는 이벤트 리스너 등록
+                                    kakao.maps.event.addListener(marker, 'click', function () {
+                                        var position = this.getPosition(); // 클릭한 마커의 좌표 가져오기
+
+                                        // 가까운 로드뷰의 panoId를 추출하여 로드뷰 이동
+                                        roadviewClient.getNearestPanoId(position, 50, function (panoId) {
+                                            roadview.setPanoId(panoId, position);
+                                        });
+                                    });
+                                }
+                                </script>
+                                <br><br>
+                                <h3>사고 발생 Road View</h3>
+                                <!-- 로드뷰를 표시할 div 입니다 -->
+                                <div id="roadview" style="width:100%;height:350px;"></div>
+
+                                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
+                                <script>
+                                var roadviewContainer = document.getElementById('roadview');
+                                var roadview = new kakao.maps.Roadview(roadviewContainer);
+                                var roadviewClient = new kakao.maps.RoadviewClient();
+
+                                var position = new kakao.maps.LatLng(37.524665766713, 127.052190456925);
+
+                                roadviewClient.getNearestPanoId(position, 50, function (panoId) {
+                                    roadview.setPanoId(panoId, position);
+                                });
+                                </script>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-6 tm-contact-col-r">
+                    <!-- Map -->
+                    <!-- 삭제 -->
+                    <!-- Address -->
+                    <!-- 삭제-->
+
+                    <!-- Links -->
+                    <ul class="tm-contact-links mb-4">
+                        <li class="mb-2">
+                            <a href="tel:119">
+                                <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
+                                119에 교통 사고 신고
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:jiseo33668@gmail.com">
+                                <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
+                                사이트 교통 사고 정보 제보 
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="tm-contact-social">
+                        <li><a href="https://fb.com/templatemo" class="tm-social-link"><i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://youtube.com" class="tm-social-link"><i class="fab fa-youtube"></i></a></li>
+                    </ul> -->
+                </div>
+            </div>
         </div>
     </div>
-    <div class="map-container">
-        <br><div id="top1" class="title">결빙사고 지역별 차트 </div>
-        <iframe class="chart" src="http://127.0.0.1:5500/src/main/resources/static/chart.html"></iframe>
-        <h2 id="top2">결빙사고 지도</h2>
-        <iframe class="map" src="http://127.0.0.1:5500/src/main/resources/static/map.html"></iframe>
-    </div>
-    <h2>결빙사고 지역별 뉴스</h2>
-</body>
 
-</html>
+    <!-- Copyright -->
+    <!-- <div class="tm-section-wrap tm-copyright row">
+        <div class="col-12">
+            <div class="text-right">
+                Copyright 2020 Upright Company
+            </div>
+        </div>
+    </div> -->
+    </div> <!-- .tm-main -->
+    </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <script src="../static/js/jquery-3.4.1.min.js"></script> <!-- https://jquery.com/ -->
+    <script src="../static/js/jquery.singlePageNav.min.js"></script>
+    <!-- https://github.com/ChrisWojcik/single-page-nav -->
+    <script src="../static/js/parallax/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
+    <script src="../static/js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
+    <script src="../static/js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <script src="../static/slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
+    <script src="../static/js/templatemo-script.js"></script>
+    <!-- <script src="../static/js/newsapi.js"></script> -->
+</body>

@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 @Configuration // 스프링 설정 객체
 @EnableWebSecurity // 스프링 설정 중에서 시큐리티 설정 객체
@@ -30,10 +29,11 @@ public class SecurityConfig {
         // CSRF : Cross Site Request Forgery의 약자
         // 사이트 간 요청 위조
         // 개발할때만 disable, 서비스 단계에서는 able로 할 것
+
         http.csrf(AbstractHttpConfigurer::disable);
-        http
+        // http.headers(headers -> headers.frameOptions().sameOrigin());
                 // url path에 대한 접근 권한 설정
-                .authorizeHttpRequests(
+                http.authorizeHttpRequests(
                         authorize -> authorize
                                 // 인증(로그인)이 성공했을 때, (인가(권한)는 확인하지 않음)
                                 .requestMatchers("/user/**").authenticated()
