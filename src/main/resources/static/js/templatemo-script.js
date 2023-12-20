@@ -2,7 +2,23 @@
  * Credits
  * Isotope with paging: https://codepen.io/TimRizzo/details/ervrRq
  */
+let islogoutEl = document.getElementById("islogout")
 
+function islogout(url) {
+    let answer;
+    //페이지를 이동하기 전에 confirm()을 사용해 다시 한번 확인한다.
+    //확인을 선택하면 answer에  true, 취소를 선택하면 false 값이 들어간다.
+    answer = confirm("로그아웃 하시겠습니까?");
+    //확인을 선택한 경우 자바스크립트를 호출할 때 같이 넘어온 url이라는 변수에 들어있는 주소로 페이지 이동
+    if (answer == true) {
+        alert("로그아웃을 하였습니다.")
+        location.href = "/logout"
+    }
+    else {
+        alert("로그아웃을 취소하였습니다.")
+        location.href = "/index"
+    }
+}
 $(document).ready(function () {
 
     /*************** Navigation *****************/
@@ -27,6 +43,20 @@ $(document).ready(function () {
     $("#tm-sidebar .nav-link").click(function (e) {
         $(".tm-sidebar").removeClass("show");
     });
+//wheater
+// JavaScript를 이용한 스타일 변경 예시
+var weatherContainer = document.getElementById('wheater-container');
+if (weatherContainer) {
+    var scriptElements = weatherContainer.getElementsByTagName('script');
+    if (scriptElements.length > 0) {
+        var scriptContent = scriptElements[0].innerHTML;
+        // 스크립트 내용에서 폰트 크기 변경
+        var modifiedScriptContent = scriptContent.replace(/font-size:\s*([\d.]+)px;/g, 'font-size: 40px;');
+        // 변경된 스크립트 내용을 다시 삽입
+        scriptElements[0].innerHTML = modifiedScriptContent;
+    }
+}
+
 // total
 
 var itemSelector_total = ".tm-total-item";

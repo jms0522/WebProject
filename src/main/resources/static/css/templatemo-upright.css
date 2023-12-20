@@ -283,12 +283,13 @@ hr {
 /* wheather section*/
 /* 기본 버튼 스타일 */
 .col-lg-6 {
+
     width: 100%; /* 현재 부모 요소의 100% 너비를 사용하도록 설정 */
     white-space: nowrap;
 }
 .weather-btn {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 25px;
     border: none;
     background-color: transparent;
     color: #006699;
@@ -298,6 +299,9 @@ hr {
     transition: background-color 0.3s ease;
 	white-space: normal;
 }
+
+
+
 
 /* 마우스 호버 시 배경색 변화 */
 .weather-btn:hover {
