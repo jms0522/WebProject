@@ -1,32 +1,37 @@
 package com.example.basic.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
-import lombok.extern.slf4j.Slf4j;
+import com.example.basic.model.dto.KakaoSearchResponse;
 
-@Slf4j
-@RestController
-@RequestMapping("/api/v1")
+@Controller
 public class NewsController {
 
-    @GetMapping("/news")
-    public ResponseEntity<Object> getNews() {
-        log.info("NewsController / getNews / Start! ");
-        String apiUrl = "https://openapi.naver.com/v1/search/news?query=사고";
+    private static final String KAKAO_API_URL = "https://dapi.kakao.com/v2/search/web";
+    private static final String KAKAO_API_KEY = "20ca49760ce6d19f9af63314727bb194"; 
 
-        try {
-            RestTemplate restTemplate = new RestTemplate();
-            Object result = restTemplate.getForObject(apiUrl, Object.class);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            log.error("Error in getNews", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Internal Server Error: " + e.getMessage());
+    @GetMapping("/news")
+    public String getNews(Model model) {
+        WebClient webClient = WebClient.create();
+
+        // 카카오 웹 검색 API 호출
+        KakaoSearchResponse response = webClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path(KAKAO_API_URL)
+                        .queryParam("query", "교통사고") // 검색어
+                        .build())
+                .header("Authorization", "KakaoAK " + KAKAO_API_KEY)
+                .retrieve()
+                .bodyToMono(KakaoSearchResponse.class)
+                .block();
+
+        if (response != null) {
+            model.addAttribute("documents",response.getDocuments());
         }
+
+        return "news";
     }
 }

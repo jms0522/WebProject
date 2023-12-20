@@ -88,5 +88,12 @@ public class WebController {
         log.info("[WebController][mainpage]");
         return "mainpage";
     }
+
+    @GetMapping("/testmap")
+    public String testmap() {
+        log.info("[WebController][mainpage]");
+        return "testmap";
+    }
 }
+
 
