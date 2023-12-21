@@ -1,12 +1,21 @@
 package com.example.basic.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.basic.database.entity.DrunkEntity;
+import com.example.basic.database.entity.IceEntity;
+import com.example.basic.database.entity.TmzoneEntity;
 import com.example.basic.database.entity.WebEntity;
+import com.example.basic.service.DrunkService;
+import com.example.basic.service.IceService;
+import com.example.basic.service.TmzoneService;
 import com.example.basic.service.WebService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,13 +28,46 @@ public class WebController {
 
     @Autowired
     private WebService webService;
+    @Autowired
+    private IceService iceService;
+    @Autowired
+    private DrunkService drunkService;
+    @Autowired
+    private TmzoneService tmzoneService;
 
     @GetMapping("/index")
-    public String index() {
+    public String index(Model model) {
+        List<IceEntity> iceList = iceService.selectAll();
+        List<DrunkEntity> drunkList = drunkService.selectAll();
+        List<TmzoneEntity> tmzoneList = tmzoneService.selectAll();
+
+        log.info("[IceController][selectAll] Start");
+        log.info("iceList: " + iceList.size());
+
+        model.addAttribute("iceList", iceList);
+        model.addAttribute("drunkList", drunkList);
+        model.addAttribute("tmzoneList", tmzoneList);
+
         log.info("[WebController][index] Start");
         return "index";
     }
 
+    @GetMapping("/index2")
+    public String index2(Model model) {
+        List<IceEntity> iceList = iceService.selectAll();
+        List<DrunkEntity> drunkList = drunkService.selectAll();
+        List<TmzoneEntity> tmzoneList = tmzoneService.selectAll();
+
+        log.info("[IceController][selectAll] Start");
+        log.info("iceList: " + iceList.size());
+
+        model.addAttribute("iceList", iceList);
+        model.addAttribute("drunkList", drunkList);
+        model.addAttribute("tmzoneList", tmzoneList);
+
+        log.info("[WebController][index2] Start");
+        return "index2";
+    }
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         log.info("[WebController][logout] Start");
@@ -34,7 +76,7 @@ public class WebController {
         session.removeAttribute("userId");
         session.removeAttribute("userRole");
 
-        return "redirect:/loginPage";
+        return "index2";
     }
 
     @GetMapping("/loginPage")
@@ -74,7 +116,7 @@ public class WebController {
     }
 
     @GetMapping("/loginfail")
-    public String loginfail(){
+    public String loginfail() {
         return "loginfail";
     }
 }

@@ -98,22 +98,22 @@
                                     연휴 사고 기사
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#accident" class="nav-link">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-clipboard-list nav-icon"></i>
-                                    회원전용
-                                </a>
-                            </li>
                 
-        
-                    <li class="nav-item">
-                        <a href="#" class="nav-link external" target="_parent" rel="sponsored" 
+                            <li class="nav-item">
+                                <a class="nav-link external" target="_parent" rel="sponsored" href="./loginPage">
+                                    <div class=" triangle-right">
+                    </div>
+                    <i class="fas fa-external-link-alt nav-icon"></i>
+                    로그인
+                    </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="#" class="nav-link external" target="_parent" rel="sponsored" class="nav-link"
                             id="islogout" type="button" onclick="islogout()">
                             <i class="fas fa-external-link-alt nav-icon"></i>
                             로그아웃</a>
                         <div class=" triangle-right"></div>
-                    </li>  
+                    </li>  -->
                     </ul>
             </div>
 
@@ -1749,126 +1749,6 @@
     </div>
 
 <!-- Contact section -->
-<div class="tm-section-wrap">
-    <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-01.jpg"></div>
-    <section id="accident" class="tm-section">
-        <h2 class="tm-text-primary">회원 전용</h2>
-        <hr class="mb-5">
-        <h4>지도 메모</h4>
-        <br>
-        
-<div id="map" style="width:50%;height:350px;"></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
-<p>
-    <button onclick="hideMarkers()">마커 감추기</button>
-    <button onclick="showMarkers()">마커 보이기</button>
-</p>
-<em>지도를 클릭해서 메모를 작성해보세요</em>
-
-<script>
-    var mapContainer = document.getElementById('map');
-    var mapOption = {
-        center: new kakao.maps.LatLng(37.524665766713, 127.052190456925),
-        level: 4
-    };
-
-    var map = new kakao.maps.Map(mapContainer, mapOption);
-    var markers = [];
-    var memoOverlays = [];
-
-    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-        addMarker(mouseEvent.latLng);
-    });
-
-    function addMarker(position) {
-        var imageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8q8wQZhseThe84pr2Qrmn0jpzgNAR1Ts1w&usqp=CAU';
-        var imageSize = new kakao.maps.Size(60, 60);
-        var imageOption = {offset: new kakao.maps.Point(25, 25)};
-        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-
-        var marker = new kakao.maps.Marker({
-            position: position,
-            image: markerImage,
-        });
-
-        marker.setMap(map);
-
-        kakao.maps.event.addListener(marker, 'click', function() {
-            var markerPosition = marker.getPosition();
-            var memo = prompt('메모를 입력하세요.');
-            if (memo !== null) {
-                var memoOverlay = new kakao.maps.CustomOverlay({
-                    position: markerPosition,
-                    content: '<div class="memo">' + memo + '</div>',
-                    yAnchor: -1 // 메모의 yAnchor를 1로 설정하여 메모가 마커 아래에 나타나도록 함
-                });
-                memoOverlay.setMap(map);
-                memoOverlays.push(memoOverlay);
-            }
-        });
-
-        markers.push(marker);
-    }
-
-    function setMarkers(map) {
-        for (var i = 0; i < markers.length; i++) {
-            markers[i].setMap(map);
-        }            
-    }
-
-    function showMarkers() {
-        setMarkers(map);
-        showMemos();
-    }
-
-    function hideMarkers() {
-        setMarkers(null);
-        hideMemos();
-    }
-
-    function hideMemos() {
-        for (var i = 0; i < memoOverlays.length; i++) {
-            memoOverlays[i].setMap(null);
-        }
-    }
-
-    function showMemos() {
-        for (var i = 0; i < memoOverlays.length; i++) {
-            memoOverlays[i].setMap(map);
-        }
-    }
-</script>
-
-<style>
-    .memo {
-        padding: 7px;
-        background-color: #fff;
-        border: 2px solid #0b3de0;
-        border-radius: 6px;
-        font-size: 14px;
-    }
-</style>
-<br>
-<br>
-
-<h4>교통량 정보</h4>
-<div id="map2" style="width:50%;height:350px;"></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
-<script>
-    var mapContainer2 = document.getElementById('map2'), // 지도를 표시할 div 
-        mapOption2= { 
-            center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-            level: 6 // 지도의 확대 레벨
-        };
-
-    var map2 = new kakao.maps.Map(mapContainer2, mapOption2); // 지도를 생성합니다
-
-    // 지도에 교통정보를 표시하도록 지도타입을 추가합니다
-    map2.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);    
-
-    // 아래 코드는 위에서 추가한 교통정보 지도타입을 제거합니다
-    // map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);    
-</script>   
 <!-- Copyright -->
 <div class="tm-section-wrap tm-copyright row"> 
     <div class="col-12">

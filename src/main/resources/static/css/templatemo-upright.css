@@ -2152,3 +2152,40 @@ select:not([multiple]) {
 		margin-left: 0;
 	}
 }
+
+/* styles.css 혹은 원하는 CSS 파일에 추가 */
+.table-wrapper-ice {
+    /* 테이블 크기 조정 예시 */
+    width: 100%;
+}
+
+/* 테이블 스타일링 예시 */
+.table-wrapper-ice table {
+    border-collapse: collapse;
+    width: 100%;
+	border-radius: 10px;
+	margin-bottom: -5%;
+}
+
+.table-wrapper-ice th{
+	border: 1px solid #ddd;
+    padding: 4px;
+    text-align: center;
+}
+.table-wrapper-ice td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+	
+}
+
+.table-wrapper-ice th {
+    background-color: #f2f2f2;
+}
+
+.table-wrapper-ice th:nth-child(2),
+.table-wrapper-ice td:nth-child(2) {
+    /* 두 번째 칼럼(날짜)의 셀에 스타일 적용 */
+    width: 130px; /* 날짜 셀의 너비를 조정합니다. */
+    /* 다른 스타일링 속성들 */
+}
