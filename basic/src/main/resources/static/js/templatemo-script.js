@@ -3,8 +3,6 @@
  * Isotope with paging: https://codepen.io/TimRizzo/details/ervrRq
  */
 
-
-
 let islogoutEl = document.getElementById("islogout")
 
 function islogout(url) {

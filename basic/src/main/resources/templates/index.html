@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -23,8 +23,7 @@ https://templatemo.com/tm-555-upright
 -->
 </head>
 
-<body style="background-color: transparent;">
-
+<body style="background-color: transparent;" th:onload="alert('hello, [[${username}]]')">
     <div class="container-fluid">
         <div class="row">
             <!-- Leftside bar -->
@@ -35,7 +34,10 @@ https://templatemo.com/tm-555-upright
                     </button>
                     <div>
                         <div class="tm-brand-box">
-                            <h1 class="tm-brand">Upright</h1>
+                            <h2 class="tm-brand" style="text-align: center;">Navigator for<br>
+                                [[${username}]]
+                                <br>
+                            </h2>
                         </div>
                         <ul id="tm-main-nav">
                             <li class="nav-item">
@@ -132,7 +134,8 @@ https://templatemo.com/tm-555-upright
                         <div class="tm-section-wrap">
                             <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-04.jpg"></div>
                             <div id="contact" class="tm-section">
-                                <h2 class="tm-text-primary">사고 지역 로드뷰</h2>
+                                <h2 class="tm-text-primary">사고 지역 로드뷰
+                                </h2>
                                 <h1>
                                     <th:block th:each="iceList: ${iceList}">
                                         <tr>

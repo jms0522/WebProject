@@ -61,6 +61,7 @@ public class WebController {
             model.addAttribute("username", userDetails.getUsername());
         }
         // log.info("model : " + model);
+
         return "index";
     }
 
