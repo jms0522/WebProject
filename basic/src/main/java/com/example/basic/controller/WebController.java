@@ -1,15 +1,21 @@
 package com.example.basic.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.basic.database.entity.IceEntity;
 import com.example.basic.database.entity.WebEntity;
+import com.example.basic.service.IceService;
 import com.example.basic.service.WebService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +29,9 @@ public class WebController {
     @Autowired
     private WebService webService;
 
+    @Autowired
+    private IceService iceService;
+
     private boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
@@ -31,9 +40,27 @@ public class WebController {
         return authentication.isAuthenticated();
     }
 
+    @GetMapping("/test2")
+    public String test(Authentication authentication, Model model) {
+        if (authentication != null) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            model.addAttribute("username", userDetails.getUsername());
+        }
+        // log.info("model : " + model);
+        return "test2";
+    }
+
     @GetMapping("/index")
-    public String index() {
+    public String index(Authentication authentication, Model model) {
         log.info("[WebController][index] Start");
+        List<IceEntity> iceList = iceService.selectTodo();
+        model.addAttribute("iceList", iceList);
+
+        if (authentication != null) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            model.addAttribute("username", userDetails.getUsername());
+        }
+        // log.info("model : " + model);
         return "index";
     }
 
@@ -45,7 +72,7 @@ public class WebController {
         session.removeAttribute("userId");
         session.removeAttribute("userRole");
 
-        return "redirect:/loginPage";
+        return "redirect:/index";
     }
 
     @GetMapping("/loginPage")

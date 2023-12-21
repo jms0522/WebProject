@@ -1,9 +1,13 @@
 package com.example.basic.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.basic.database.dao.WebDao;
+import com.example.basic.database.entity.IceEntity;
 import com.example.basic.database.entity.WebEntity;
 import com.example.basic.model.repository.WebRepository;
 import com.example.basic.service.WebService;
@@ -19,6 +23,9 @@ public class WebServiceImpl implements WebService {
 
     @Autowired
     private WebRepository webRepository;
+
+    @Autowired
+    private WebDao webDao;
 
     // public void joinUserDto(WebDto dto) {
     // log.info("[UserService][joinUserDto] Start");
@@ -54,6 +61,16 @@ public class WebServiceImpl implements WebService {
 
         log.info("entity : " + entity.toString());
         webRepository.save(entity);
+    }
 
+    public List<WebEntity> selectWeb() {
+
+        return webDao.selectTodo();
+    }
+
+    public void updateIsLoginByName(String name, Boolean isLogin) {
+        WebEntity webEntity = webRepository.getUserDtoByUserId(name);
+        webEntity.setIsLogin(isLogin);
+        webRepository.save(webEntity);
     }
 }

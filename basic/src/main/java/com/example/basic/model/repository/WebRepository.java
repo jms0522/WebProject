@@ -8,5 +8,5 @@ import com.example.basic.database.entity.WebEntity;
 
 public interface WebRepository extends JpaRepository<WebEntity, Long> {
     @Query(value = "SELECT a.* FROM account a WHERE a.id = :id", nativeQuery = true)
-    WebEntity getUserDtoByUserId(@Param(value = "id") String id);
+    public WebEntity getUserDtoByUserId(@Param(value = "id") String id);
 }

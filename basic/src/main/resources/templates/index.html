@@ -107,16 +107,14 @@ https://templatemo.com/tm-555-upright
                                     </div>
                                     <i class="fas fa-external-link-alt nav-icon"></i>
                                     로그인
-                                </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link external" target="_parent" rel="sponsored" class="nav-link"
-                                    id="islogout" type="button" onclick="islogout()">로그아웃</a>
+                                <a href="#" class="nav-link external" target="_parent" rel="sponsored" id="islogout"
+                                    type="button" onclick="islogout()">로그아웃</a>
                                 <div class=" triangle-right">
                                 </div>
                                 <i class="fas fa-external-link-alt nav-icon"></i>
-                                <!-- 로그아웃 -->
                             </li>
                         </ul>
                     </div>
@@ -131,6 +129,75 @@ https://templatemo.com/tm-555-upright
                 <div class="tm-section-wrap">
                     <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-01.jpg"></div>
                     <section id="home" class="tm-section">
+                        <div class="tm-section-wrap">
+                            <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-04.jpg"></div>
+                            <div id="contact" class="tm-section">
+                                <h2 class="tm-text-primary">사고 지역 로드뷰</h2>
+                                <h1>
+                                    <th:block th:each="iceList: ${iceList}">
+                                        <tr>
+                                            <td th:text="${iceList.id}"></td>
+                                            <td th:text="${iceList.title}"></td>
+                                        </tr>
+                                    </th:block>
+                                </h1>
+                                <hr class="mb-5">
+                                <div class="row">
+                                    <div class="col-xl-6 tm-contact-col-l mb-4">
+                                        <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                                            <div id="map2" style="width:100%;height:500px;"></div>
+                                            <script type="text/javascript"
+                                                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
+                                            <script>
+                                                var mapContainer2 = document.getElementById('map2'), // 지도를 표시할 div 
+                                                    mapOption2 = {
+                                                        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+                                                        level: 8// 지도의 확대 레벨
+                                                    };
+
+                                                var map2 = new kakao.maps.Map(mapContainer2, mapOption2); // 지도를 생성합니다
+
+                                                // 지도에 교통정보를 표시하도록 지도타입을 추가합니다
+                                                map2.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+
+                                                // 아래 코드는 위에서 추가한 교통정보 지도타입을 제거합니다
+                                                // map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);    
+                                            </script>
+                                        </form>
+                                    </div>
+                                    <div class="col-xl-6 tm-contact-col-r">
+                                        <!-- Map -->
+                                        <!-- 삭제 -->
+                                        <!-- Address -->
+                                        <!-- 삭제-->
+
+                                        <!-- Links -->
+                                        <ul class="tm-contact-links mb-4">
+                                            <li class="mb-2">
+                                                <a href="tel:119">
+                                                    <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
+                                                    119에 교통 사고 신고
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:jiseo33668@gmail.com">
+                                                    <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
+                                                    사이트 교통 사고 정보 제보
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- <ul class="tm-contact-social">
+                        <li><a href="https://fb.com/templatemo" class="tm-social-link"><i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://youtube.com" class="tm-social-link"><i class="fab fa-youtube"></i></a></li>
+                    </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <h2 class="tm-text-primary">실시간 날씨 기온</h2>
                         <hr class="mb-5">
                         <div class="row">
@@ -347,7 +414,30 @@ https://templatemo.com/tm-555-upright
                     </ul>
                     <div class="tm-news">
                         <figure class="effect-honey tm-news-item seoul">
-                            <li>seoul</li>
+                            <!-- <li> -->
+                            <div class="app-container d-flex align-items-center justify-content-center flex-column">
+                                <h3>Todo App</h3>
+                                <div class="table-wrapper">
+                                    <table class="table table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th> No. </th>
+                                                <th> Todo item </th>
+                                                <th> status </th>
+                                                <th> Actions </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th:block th:each="iceList: ${iceList}">
+                                                <tr>
+                                                    <td th:text="${iceList.id}"></td>
+                                                    <td th:text="${iceList.title}"></td>
+                                                </tr>
+                                            </th:block>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- </li> -->
                         </figure>
                         <figure class="effect-honey tm-news-item gyeonggi">
                             <input type="button" value="hello">

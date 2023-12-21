@@ -1,5 +1,9 @@
 package com.example.basic.database.dao;
 
-public interface WebDao {
+import java.util.List;
 
+import com.example.basic.database.entity.WebEntity;
+
+public interface WebDao {
+    public List<WebEntity> selectTodo();
 }

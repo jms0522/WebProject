@@ -27,13 +27,20 @@ spring:
                 format_sql: true
 
     # mustache (1. 루트폴더 변경, 2. 타임리프 캐시 설정 변경)
-    mustache:
+    # mustache:
+    #     prefix: classpath:templates/
+    #     check-template-location: true
+    #     suffix: .html
+    #     cache: false
+    #     expose-session-attributes: true
+    # spring.mustache.expose-session-attributes=true
+    # Thymeleaf
+    thymeleaf:
         prefix: classpath:templates/
         check-template-location: true
         suffix: .html
+        mode: HTML
         cache: false
-        expose-session-attributes: true
-        # spring.mustache.expose-session-attributes=true
 
     mvc:
         static-path-pattern: /static/**
