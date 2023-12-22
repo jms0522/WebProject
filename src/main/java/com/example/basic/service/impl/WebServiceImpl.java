@@ -54,6 +54,12 @@ public class WebServiceImpl implements WebService {
 
         log.info("entity : " + entity.toString());
         webRepository.save(entity);
+    }
+    public void updateIsLoginByName(String name, Boolean isLogin) {
+            WebEntity webEntity = webRepository.getUserDtoByUserId(name);
+            webEntity.setIsLogin(isLogin);
+            webRepository.save(webEntity);
+        }
 
     }
-}
+

@@ -31,4 +31,7 @@ public class WebEntity {
     private String addr;
     private String role;
 
+    @Column(columnDefinition = "tinyint(1) default 0")
+    private Boolean isLogin;
+
 }

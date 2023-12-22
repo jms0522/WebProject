@@ -17,6 +17,10 @@ https://templatemo.com/tm-555-upright
 	
 */
 
+* {
+	cursor: url(../img/car_tr.png) 20 20, auto;
+}
+
 html,
 body {
 	overflow-x: hidden;
@@ -2153,39 +2157,51 @@ select:not([multiple]) {
 	}
 }
 
-/* styles.css 혹은 원하는 CSS 파일에 추가 */
-.table-wrapper-ice {
-    /* 테이블 크기 조정 예시 */
-    width: 100%;
-}
-
-/* 테이블 스타일링 예시 */
+/* Table 스타일 */
 .table-wrapper-ice table {
-    border-collapse: collapse;
-    width: 100%;
-	border-radius: 10px;
-	margin-bottom: -5%;
-}
-
-.table-wrapper-ice th{
-	border: 1px solid #ddd;
-    padding: 4px;
-    text-align: center;
-}
-.table-wrapper-ice td {
-    border: 1px solid #ddd;
-    padding: 4px;
-    text-align: left;
-	
-}
-
-.table-wrapper-ice th {
-    background-color: #f2f2f2;
-}
-
-.table-wrapper-ice th:nth-child(2),
-.table-wrapper-ice td:nth-child(2) {
-    /* 두 번째 칼럼(날짜)의 셀에 스타일 적용 */
-    width: 130px; /* 날짜 셀의 너비를 조정합니다. */
-    /* 다른 스타일링 속성들 */
-}
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+  }
+  
+  .table-wrapper-ice th,
+  .table-wrapper-ice td {
+	padding: 6px 15px;
+  }
+  
+  .table-wrapper-ice th {
+	background: #42444e;
+	color: #fff;
+	text-align: center;
+  }
+  
+  .table-wrapper-ice tr:first-child th:first-child {
+	border-top-left-radius: 6px;
+  }
+  
+  .table-wrapper-ice tr:first-child th:last-child {
+	border-top-right-radius: 6px;
+	width: 150px;
+  }
+  
+  .table-wrapper-ice td {
+	border-right: 1px solid #c6c9cc;
+	border-bottom: 1px solid #c6c9cc;
+  }
+  
+  .table-wrapper-ice td:first-child {
+	border-left: 1px solid #c6c9cc;
+  }
+  
+  .table-wrapper-ice tr:nth-child(even) td {
+	background: #eaeaed;
+  }
+  
+  .table-wrapper-ice tr:last-child td:first-child {
+	border-bottom-left-radius: 6px;
+  }
+  
+  .table-wrapper-ice tr:last-child td:last-child {
+	border-bottom-right-radius: 6px;
+  }
+  

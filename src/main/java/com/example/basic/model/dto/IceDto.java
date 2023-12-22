@@ -14,7 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class IceDto {
-        private Long id;
+    private Long id;
     
     private String local1;
     private String title;

@@ -3,6 +3,8 @@ package com.example.basic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +38,7 @@ public class WebController {
     private TmzoneService tmzoneService;
 
     @GetMapping("/index")
-    public String index(Model model) {
+    public String index(Authentication authentication, Model model) {
         List<IceEntity> iceList = iceService.selectAll();
         List<DrunkEntity> drunkList = drunkService.selectAll();
         List<TmzoneEntity> tmzoneList = tmzoneService.selectAll();
@@ -47,6 +49,10 @@ public class WebController {
         model.addAttribute("iceList", iceList);
         model.addAttribute("drunkList", drunkList);
         model.addAttribute("tmzoneList", tmzoneList);
+        if (authentication != null) {
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("username", userDetails.getUsername());
+        }
 
         log.info("[WebController][index] Start");
         return "index";
